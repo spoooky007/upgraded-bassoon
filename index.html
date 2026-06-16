@@ -3,97 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>متجري الإلكتروني</title>
+    <title>متجر الجيمينج الاحترافي</title>
     <style>
+        /* إعدادات الخطوط والخلفية العامة للموقع */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f7f6;
+            background-color: #0f172a; /* خلفية داكنة احترافية تناسب الجيمينج */
+            color: #f8fafc;
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* الشعار والشريط العلوي للمتجر */
+        header {
+            background-color: #1e293b;
             padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border-bottom: 2px solid #3b82f6; /* خط أزرق مميز */
+        }
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+            color: #3b82f6;
+        }
+        header p {
+            margin: 5px 0 0 0;
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        /* حاوية المنتجات (الشبكة الذكية) */
+        .products-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* تصميم بطاقة المنتج الاحترافية */
+        .product-card {
+            background-color: #1e293b;
+            border-radius: 16px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #334155;
+            padding: 20px;
+        }
+
+        /* حركة ذكية عند مرور الماوس فوق المنتج */
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.2);
+            border-color: #3b82f6;
+        }
+
+        /* إطار تعديل وحماية الصور */
+        .image-wrapper {
+            width: 100%;
+            height: 250px;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-        }
-        .product-card {
-            background-color: #ffffff;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            max-width: 400px;
-            width: 100%;
+            background-color: #0f172a;
+            border-radius: 12px;
             overflow: hidden;
-            text-align: center;
-            padding: 20px;
         }
         .product-card img {
             max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            object-fit: cover;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
         }
+        .product-card:hover img {
+            transform: scale(1.05); /* زووم خفيف للصورة عند الحركية */
+        }
+
+        /* نصوص المنتج */
         .product-title {
-            font-size: 24px;
-            color: #333;
+            font-size: 22px;
+            color: #ffffff;
             margin: 15px 0 10px 0;
+            text-align: right;
+            font-weight: bold;
         }
         .product-description {
-            font-size: 16px;
-            color: #666;
+            font-size: 14px;
+            color: #94a3b8;
             line-height: 1.6;
             margin-bottom: 20px;
-            padding: 0 10px;
+            text-align: right;
+            direction: ltr; /* لجعل النص الإنجليزي للمواصفات يظهر مرتباً من اليسار لليمين */
         }
+
+        /* زر الشراء الاحترافي */
         .buy-button {
-            display: inline-block;
-            background-color: #28a745;
+            display: block;
+            background-color: #2563eb; /* لون أزرق جذاب */
             color: white;
             text-decoration: none;
-            padding: 12px 30px;
-            font-size: 18px;
+            text-align: center;
+            padding: 14px;
+            font-size: 16px;
             font-weight: bold;
-            border-radius: 25px;
-            transition: background-color 0.3s ease;
-            width: 80%;
+            border-radius: 10px;
+            transition: background-color 0.2s ease;
+            margin-top: auto;
         }
         .buy-button:hover {
-            background-color: #218838;
+            background-color: #1d4ed8;
         }
     </style>
 </head>
 <body>
 
-    <div class="product-card">
-        <!-- 1. صورة المنتج (تأكد أن الاسم مطابق لملف الصورة لديك) -->
-        <img src="G502.webp" alt="صورة المنتج">
+    <header>
+        <h1>🎮 متجر الجيمينج الاحترافي 🎮</h1>
+        <p>أفضل الماوسات والإكسسوارات الموثوقة للاعبين المحترفين</p>
+    </header>
 
-        <!-- 2. عنوان المنتج -->
-        <h1 class="product-title">Logitech G502 Hero</h1>
+    <div class="products-container">
 
-        <!-- 3. وصف المنتج -->
-        <p class="High Performance Wired Gaming Mouse, Hero 25K Sensor, 25,600 DPI, RGB, Adjustable Weights, 11 Programmable Buttons, On-Board Memory, PC/Mac - Black">
-Hero High Performance Wired Gaming Mouse, Hero 25K Sensor, 25,600 DPI, RGB, Adjustable Weights, 11 Programmable Buttons, On-Board Memory, PC/Mac - Black
-        </p>
+        <div class="product-card">
+            <div class="image-wrapper">
+                <img src="G502.webp" alt="Logitech G502 Hero">
+            </div>
+            
+            <h2 class="product-title">Logitech G502 Hero</h2>
+            
+            <p class="product-description">
+                Hero High Performance Wired Gaming Mouse, Hero 25K Sensor, 25,600 DPI, RGB, Adjustable Weights, 11 Programmable Buttons, On-Board Memory, PC/Mac - Black.
+            </p>
+            
+            <a href="https://amzn.to/4oqR46w" target="_blank" class="buy-button">اشترِ الآن من أمازون</a>
+        </div>
 
-        <!-- 4. رابط الشراء (استبدل علامة # برابط الشراء الفعلي أو رابط الأفلييت/CPA) -->
-        <a href="https://amzn.to/4oqR46w" class="buy-button">اشترِ الآن فوراً</a>
-    </div>
-<div class="product-card">
-        <!-- 1. صورة المنتج (تأكد أن الاسم مطابق لملف الصورة لديك) -->
-        <img src="Razer Basilisk V3 .webp" alt="صورة المنتج">
+        <div class="product-card">
+            <div class="image-wrapper">
+                <img src="Razer Basilisk V3 .webp" alt="Razer Basilisk V3">
+            </div>
+            
+            <h2 class="product-title">Razer Basilisk V3</h2>
+            
+            <p class="product-description">
+                Razer Basilisk V3 Customizable Ergonomic Gaming Mouse: Fastest Gaming Mouse Switch - Chroma RGB Lighting - 26K DPI Optical Sensor - 11 Programmable Buttons - HyperScroll Tilt Wheel - Classic Black.
+            </p>
+            
+            <a href="https://amzn.to/4awV2F1" target="_blank" class="buy-button">اشترِ الآن من أمازون</a>
+        </div>
 
-        <!-- 2. عنوان المنتج -->
-        <h1 class="product-title">Razer Basilisk V3</h1>
+        </div>
 
-        <!-- 3. وصف المنتج -->
-        <p class="High Performance Wired Gaming Mouse, Hero 25K Sensor, 25,600 DPI, RGB, Adjustable Weights, 11 Programmable Buttons, On-Board Memory, PC/Mac - Black">
-Razer Basilisk V3 Customizable Ergonomic Gaming Mouse: Fastest Gaming Mouse Switch - Chroma RGB Lighting - 26K DPI Optical Sensor - 11 Programmable Buttons - HyperScroll Tilt Wheel - Classic Black
-        </p>
-
-        <!-- 4. رابط الشراء (استبدل علامة # برابط الشراء الفعلي أو رابط الأفلييت/CPA) -->
-        <a href="https://amzn.to/4awV2F1" class="buy-button">اشترِ الآن فوراً</a>
-    </div>
-
-    
-    
 </body>
 </html>
