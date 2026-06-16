@@ -1,1 +1,658 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <!-- إعدادات أساسية للصفحة -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- معلومات SEO لمحركات البحث -->
+    <title>Glow Nails | Best Nail Care Products & Kits 2026</title>
+    <meta name="description" content="Discover top-rated nail care products, kits, and treatments. Professional-grade nail care for beautiful, healthy nails at home.">
+    
+    <!-- أيقونة الموقع في المتصفح (أيقونة طلاء الأظافر) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💅</text></svg>">
 
+    <!-- استيراد خطوط Google احترافية تناسب نيتش التجميل -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===== إعدادات عامة للصفحة ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+            /* خلفية متدرجة ناعمة بألوان أنثوية */
+            background: linear-gradient(135deg, #fff5f7 0%, #fef5ff 50%, #fff5f0 100%);
+            color: #4a4a4a;
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* خلفية ديكورية بتأثير ناعم */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 15% 20%, rgba(236, 72, 153, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 85% 80%, rgba(219, 39, 119, 0.06) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(251, 207, 232, 0.15) 0%, transparent 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* ===== شريط التنقل العلوي ===== */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(15px); /* تأثير ضبابي أنيق */
+            padding: 18px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(236, 72, 153, 0.1);
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(236, 72, 153, 0.05);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 900;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #ec4899, #db2777);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* ===== القسم الرئيسي (Hero Section) ===== */
+        .hero {
+            padding: 80px 40px 60px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(236, 72, 153, 0.1), rgba(219, 39, 119, 0.1));
+            color: #db2777;
+            padding: 8px 22px;
+            border-radius: 25px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            border: 1px solid rgba(236, 72, 153, 0.2);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 56px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #831843 0%, #ec4899 50%, #db2777 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.1;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #6b7280;
+            max-width: 650px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        /* ===== عنوان قسم المنتجات ===== */
+        .section-header {
+            text-align: center;
+            padding: 40px 20px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 38px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #831843;
+        }
+
+        .section-header p {
+            color: #6b7280;
+            font-size: 16px;
+            font-weight: 300;
+        }
+
+        /* ===== حاوية المنتجات (الشبكة) ===== */
+        .products-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+            padding: 20px 40px 60px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        /* ===== بطاقة المنتج الأنيقة ===== */
+        .product-card {
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 10px 40px rgba(236, 72, 153, 0.08);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(236, 72, 153, 0.08);
+            position: relative;
+        }
+
+        /* حركة أنيقة عند مرور الماوس */
+        .product-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 60px rgba(236, 72, 153, 0.2);
+            border-color: rgba(236, 72, 153, 0.3);
+        }
+
+        /* شارة "Top Pick" للمنتج المميز */
+        .top-pick-badge {
+            position: absolute;
+            top: 18px;
+            left: 18px;
+            background: linear-gradient(135deg, #ec4899, #db2777);
+            color: white;
+            padding: 7px 16px;
+            border-radius: 25px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            z-index: 2;
+            box-shadow: 0 6px 15px rgba(236, 72, 153, 0.4);
+        }
+
+        /* شارة "Best Value" - بديلة للمنتجات ذات القيمة العالية */
+        .best-value-badge {
+            position: absolute;
+            top: 18px;
+            left: 18px;
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: white;
+            padding: 7px 16px;
+            border-radius: 25px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            z-index: 2;
+            box-shadow: 0 6px 15px rgba(245, 158, 11, 0.4);
+        }
+
+        /* إطار الصورة */
+        .image-wrapper {
+            width: 100%;
+            height: 280px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* خلفية متدرجة ناعمة بألوان الباستيل */
+            background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 50%, #fef3c7 100%);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* تأثير توهج وردي ناعم خلف الصورة */
+        .image-wrapper::before {
+            content: '';
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            background: radial-gradient(circle, rgba(236, 72, 153, 0.2), transparent 70%);
+            border-radius: 50%;
+            filter: blur(40px);
+        }
+
+        .product-card img {
+            max-width: 80%;
+            max-height: 85%;
+            object-fit: contain;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            z-index: 1;
+            /* ظل خفيف للصورة */
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
+        }
+
+        .product-card:hover img {
+            transform: scale(1.08) rotate(-2deg); /* تكبير مع دوران خفيف أنيق */
+        }
+
+        /* محتوى المنتج */
+        .product-content {
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        /* تصنيف المنتج */
+        .product-category {
+            color: #ec4899;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .product-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            color: #1f2937;
+            margin-bottom: 14px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .product-description {
+            font-size: 14px;
+            color: #6b7280;
+            line-height: 1.7;
+            margin-bottom: 22px;
+            flex-grow: 1;
+            font-weight: 300;
+        }
+
+        /* مميزات المنتج (نقاط سريعة) */
+        .product-features {
+            list-style: none;
+            margin-bottom: 22px;
+            padding: 0;
+        }
+
+        .product-features li {
+            font-size: 13px;
+            color: #4b5563;
+            padding: 5px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .product-features li::before {
+            content: '✓';
+            color: #ec4899;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        /* زر الشراء من أمازون - بلون وردي أنيق */
+        .buy-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #ec4899, #db2777);
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            padding: 16px;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 12px;
+            transition: all 0.3s;
+            box-shadow: 0 8px 20px rgba(236, 72, 153, 0.3);
+            font-family: 'Poppins', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .buy-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(236, 72, 153, 0.5);
+            background: linear-gradient(135deg, #db2777, #be185d);
+        }
+
+        /* سهم متحرك داخل الزر */
+        .buy-button .arrow {
+            transition: transform 0.3s;
+        }
+
+        .buy-button:hover .arrow {
+            transform: translateX(5px);
+        }
+
+        /* ملاحظة صغيرة أسفل الزر */
+        .affiliate-note {
+            text-align: center;
+            color: #9ca3af;
+            font-size: 12px;
+            margin-top: 12px;
+            font-style: italic;
+        }
+
+        /* ===== قسم النصائح (يضيف قيمة للزائر) ===== */
+        .tips-section {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            padding: 50px 40px;
+            margin: 40px 0;
+            border-top: 1px solid rgba(236, 72, 153, 0.1);
+            border-bottom: 1px solid rgba(236, 72, 153, 0.1);
+        }
+
+        .tips-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+        }
+
+        .tip-item {
+            text-align: center;
+            padding: 25px 20px;
+            background: white;
+            border-radius: 16px;
+            border: 1px solid rgba(236, 72, 153, 0.1);
+            transition: all 0.3s;
+        }
+
+        .tip-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(236, 72, 153, 0.1);
+        }
+
+        .tip-icon {
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+
+        .tip-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: #831843;
+        }
+
+        .tip-item p {
+            color: #6b7280;
+            font-size: 13px;
+            font-weight: 300;
+        }
+
+        /* ===== قسم الإفصاح عن العمولة (مهم قانونياً) ===== */
+        .disclosure {
+            background: rgba(255, 255, 255, 0.6);
+            padding: 30px 40px;
+            text-align: center;
+            border-top: 1px solid rgba(236, 72, 153, 0.1);
+            border-bottom: 1px solid rgba(236, 72, 153, 0.1);
+        }
+
+        .disclosure p {
+            color: #6b7280;
+            font-size: 12px;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        .disclosure strong {
+            color: #db2777;
+            font-weight: 600;
+        }
+
+        /* ===== التذييل البسيط ===== */
+        footer {
+            background: #ffffff;
+            padding: 35px 40px;
+            text-align: center;
+            border-top: 1px solid rgba(236, 72, 153, 0.1);
+        }
+
+        .footer-bottom {
+            color: #9ca3af;
+            font-size: 13px;
+            margin-bottom: 12px;
+            font-weight: 300;
+        }
+
+        .footer-bottom span {
+            color: #ec4899;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #6b7280;
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.3s;
+            font-weight: 400;
+        }
+
+        .footer-links a:hover {
+            color: #ec4899;
+        }
+
+        /* ===== التجاوب مع الشاشات الصغيرة ===== */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 20px 40px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .products-container {
+                padding: 20px;
+                gap: 25px;
+            }
+
+            .section-header h2 {
+                font-size: 28px;
+            }
+
+            nav {
+                padding: 15px 20px;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            .tips-section {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== شريط التنقل البسيط ===== -->
+    <nav>
+        <a href="#" class="logo">💅 Glow Nails</a>
+    </nav>
+
+    <!-- ===== القسم الرئيسي الترحيبي ===== -->
+    <section class="hero">
+        <span class="hero-badge">✨ Expert-Selected for You</span>
+        <h1>Beautiful Nails Start Here</h1>
+        <p>Discover our hand-picked collection of professional-grade nail care products. Salon-quality results, right at home.</p>
+    </section>
+
+    <!-- ===== عنوان قسم المنتجات ===== -->
+    <div class="section-header">
+        <h2>Our Top Picks</h2>
+        <p>Click any product to see full details, reviews, and current pricing on Amazon</p>
+    </div>
+
+    <!-- ===== حاوية المنتجات ===== -->
+    <div class="products-container">
+
+        <!-- المنتج الأول: مجموعة العناية المتكاملة -->
+        <div class="product-card">
+            <!-- شارة "الأكثر مبيعاً" - يمكنك تغييرها أو حذفها -->
+            <span class="top-pick-badge">🏆 #1 Best Seller</span>
+            
+            <div class="image-wrapper">
+                <!-- استبدل الرابط بصورتك الفعلية -->
+                <img src="nail-kit.webp" alt="Professional Nail Care Kit" loading="lazy">
+            </div>
+            
+            <div class="product-content">
+                <span class="product-category">Complete Kit</span>
+                <h2 class="product-title">Professional Nail Care Kit</h2>
+                
+                <p class="product-description">
+                    Everything you need for salon-perfect nails at home. This complete set includes premium tools for trimming, shaping, and polishing.
+                </p>
+                
+                <!-- قائمة مميزات سريعة - تزيد من قيمة المنتج -->
+                <ul class="product-features">
+                    <li>Professional-grade stainless steel</li>
+                    <li>Complete 12-piece set</li>
+                    <li>Elegant travel case included</li>
+                </ul>
+                
+                <!-- الزر الرئيسي - يذهب مباشرة إلى أمازون -->
+                <a href="#" target="_blank" rel="noopener noreferrer nofollow" class="buy-button">
+                    <span>Check Price on Amazon</span>
+                    <span class="arrow">→</span>
+                </a>
+                
+                <p class="affiliate-note">✓ Free shipping available</p>
+            </div>
+        </div>
+
+        <!-- المنتج الثاني: زيت الترطيب -->
+        <div class="product-card">
+            <!-- شارة "أفضل قيمة" -->
+            <span class="best-value-badge">💎 Best Value</span>
+            
+            <div class="image-wrapper">
+                <img src="oil.webp" alt="Natural Nail Strengthening Oil" loading="lazy">
+            </div>
+            
+            <div class="product-content">
+                <span class="product-category">Treatment</span>
+                <h2 class="product-title">Natural Nail Strengthening Oil</h2>
+                
+                <p class="product-description">
+                    Vitamin-rich formula that nourishes nails and cuticles. Prevents breakage and promotes healthy, shiny growth.
+                </p>
+                
+                <ul class="product-features">
+                    <li>100% natural ingredients</li>
+                    <li>Fast-absorbing formula</li>
+                    <li>Visible results in 2 weeks</li>
+                </ul>
+                
+                <a href="#" target="_blank" rel="noopener noreferrer nofollow" class="buy-button">
+                    <span>Check Price on Amazon</span>
+                    <span class="arrow">→</span>
+                </a>
+                
+                <p class="affiliate-note">✓ Prime eligible</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ===== قسم النصائح (يضيف قيمة للزائر ويبنيه في الصفحة) ===== -->
+    <section class="tips-section">
+        <div class="tips-container">
+            <div class="tip-item">
+                <div class="tip-icon">💧</div>
+                <h3>Stay Hydrated</h3>
+                <p>Drink plenty of water for stronger, healthier nails from within.</p>
+            </div>
+            <div class="tip-item">
+                <div class="tip-icon">🧴</div>
+                <h3>Moisturize Daily</h3>
+                <p>Apply cuticle oil every night before bed for best results.</p>
+            </div>
+            <div class="tip-item">
+                <div class="tip-icon">✂️</div>
+                <h3>Trim Regularly</h3>
+                <p>Keep nails at a manageable length to prevent breakage.</p>
+            </div>
+            <div class="tip-item">
+                <div class="tip-icon">🧤</div>
+                <h3>Wear Gloves</h3>
+                <p>Protect your nails when using cleaning products or doing dishes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== قسم الإفصاح عن العمولة (إلزامي قانونياً) ===== -->
+    <section class="disclosure">
+        <p>
+            <strong>Affiliate Disclosure:</strong> As an Amazon Associate, we earn from qualifying purchases. 
+            This means we may receive a small commission when you purchase through our links, at no extra cost to you. 
+            We only recommend products we personally believe in and have researched thoroughly. Prices and availability are subject to change.
+        </p>
+    </section>
+
+    <!-- ===== التذييل البسيط ===== -->
+    <footer>
+        <div class="footer-bottom">
+            <p>© 2026 <span>Glow Nails</span>. Made with 💖 for beauty lovers.</p>
+        </div>
+        <div class="footer-links">
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Affiliate Disclosure</a>
+        </div>
+    </footer>
+
+    <!-- ===== كود JavaScript بسيط جداً ===== -->
+    <script>
+        // ===== تتبع النقرات على روابط أمازون (اختياري) =====
+        // هذا الكود يسجل عدد النقرات - مفيد إذا ربطت الموقع بـ Google Analytics
+        document.querySelectorAll('.buy-button').forEach(button => {
+            button.addEventListener('click', function() {
+                // يمكنك تفعيل هذا السطر إذا أضفت Google Analytics
+                // gtag('event', 'click', { 'event_category': 'Affiliate', 'event_label': 'Nail Product' });
+                
+                console.log('User clicked affiliate link');
+            });
+        });
+    </script>
+
+</body>
+</html>
