@@ -1,165 +1,1204 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
+    <!-- إعدادات أساسية للصفحة -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>متجر الجيمينج الاحترافي</title>
+    
+    <!-- معلومات SEO لمحركات البحث -->
+    <title>Pro Gaming Store | Best Gaming Mice & Accessories</title>
+    <meta name="description" content="Premium gaming mice and accessories for professional gamers. Logitech, Razer, and more top brands.">
+    <meta name="keywords" content="gaming mouse, pro gaming, Logitech, Razer, gaming accessories">
+    
+    <!-- روابط المشاركة على وسائل التواصل -->
+    <meta property="og:title" content="Pro Gaming Store">
+    <meta property="og:description" content="Best gaming mice for professional gamers">
+    <meta property="og:type" content="website">
+    
+    <!-- أيقونة الموقع في المتصفح -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
+
+    <!-- استيراد خط Google احترافي -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
-        /* إعدادات الخطوط والخلفية العامة للموقع */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0f172a; /* خلفية داكنة احترافية تناسب الجيمينج */
-            color: #f8fafc;
+        /* ===== إعدادات عامة للصفحة ===== */
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* الشعار والشريط العلوي للمتجر */
-        header {
-            background-color: #1e293b;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            border-bottom: 2px solid #3b82f6; /* خط أزرق مميز */
-        }
-        header h1 {
-            margin: 0;
-            font-size: 28px;
-            color: #3b82f6;
-        }
-        header p {
-            margin: 5px 0 0 0;
-            color: #94a3b8;
-            font-size: 14px;
+        body {
+            font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+            background-color: #0a0e1a; /* خلفية داكنة جداً */
+            color: #f8fafc;
+            line-height: 1.6;
+            overflow-x: hidden; /* منع التمرير الأفقي */
         }
 
-        /* حاوية المنتجات (الشبكة الذكية) */
-        .products-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        /* خلفية متحركة بتأثير الجيمينج */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(168, 85, 247, 0.08) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* ===== شريط التنقل العلوي ===== */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px); /* تأثير ضبابي خلف الشريط */
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #1e293b;
+            z-index: 100;
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 24px;
+            font-weight: 900;
+            color: #3b82f6;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            background: linear-gradient(135deg, #3b82f6, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
             gap: 30px;
-            padding: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        /* خط متحرك تحت روابط التنقل عند المرور */
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #3b82f6;
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #3b82f6;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* أيقونة السلة في الشريط */
+        .cart-icon {
+            position: relative;
+            background: #1e293b;
+            padding: 10px 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s;
+            border: 1px solid #334155;
+        }
+
+        .cart-icon:hover {
+            background: #334155;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #ef4444;
+            color: white;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            font-size: 12px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ===== القسم الرئيسي (Hero Section) ===== */
+        .hero {
+            padding: 80px 40px;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.15);
+            color: #3b82f6;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        /* حركة نبض للشارة */
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .hero h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 56px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #3b82f6 50%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #94a3b8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        /* أزرار القسم الرئيسي */
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 14px 32px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            color: white;
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.6);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #f8fafc;
+            border: 2px solid #334155;
+        }
+
+        .btn-secondary:hover {
+            border-color: #3b82f6;
+            color: #3b82f6;
+        }
+
+        /* ===== إحصائيات المتجر ===== */
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 42px;
+            font-weight: 900;
+            color: #3b82f6;
+            display: block;
+        }
+
+        .stat-label {
+            color: #94a3b8;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ===== عنوان قسم المنتجات ===== */
+        .section-header {
+            text-align: center;
+            padding: 60px 20px 30px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        /* تصميم بطاقة المنتج الاحترافية */
+        .section-header h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: #94a3b8;
+            font-size: 16px;
+        }
+
+        /* ===== حاوية المنتجات (الشبكة) ===== */
+        .products-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            padding: 20px 40px 60px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        /* ===== بطاقة المنتج الاحترافية ===== */
         .product-card {
-            background-color: #1e293b;
-            border-radius: 16px;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(145deg, #1e293b, #172033);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             border: 1px solid #334155;
-            padding: 20px;
+            position: relative;
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
         }
 
-        /* حركة ذكية عند مرور الماوس فوق المنتج */
+        /* تأخير حركة ظهور البطاقات بالتتابع */
+        .product-card:nth-child(1) { animation-delay: 0.1s; }
+        .product-card:nth-child(2) { animation-delay: 0.2s; }
+        .product-card:nth-child(3) { animation-delay: 0.3s; }
+        .product-card:nth-child(4) { animation-delay: 0.4s; }
+        .product-card:nth-child(5) { animation-delay: 0.5s; }
+        .product-card:nth-child(6) { animation-delay: 0.6s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.2);
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(59, 130, 246, 0.25);
             border-color: #3b82f6;
         }
 
-        /* إطار تعديل وحماية الصور */
+        /* شارات المنتج (الأكثر مبيعاً، خصم، جديد) */
+        .product-badges {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            z-index: 2;
+        }
+
+        .badge {
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-bestseller {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: white;
+        }
+
+        .badge-new {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+        }
+
+        .badge-sale {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            color: white;
+        }
+
+        /* زر المفضلة (القلب) */
+        .wishlist-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid #334155;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            transition: all 0.3s;
+            z-index: 2;
+        }
+
+        .wishlist-btn:hover {
+            background: #ef4444;
+            border-color: #ef4444;
+            transform: scale(1.1);
+        }
+
+        /* إطار الصورة */
         .image-wrapper {
             width: 100%;
-            height: 250px;
+            height: 260px;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #0f172a;
-            border-radius: 12px;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
             overflow: hidden;
-        }
-        .product-card img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-            transition: transform 0.3s ease;
-        }
-        .product-card:hover img {
-            transform: scale(1.05); /* زووم خفيف للصورة عند الحركية */
+            position: relative;
         }
 
-        /* نصوص المنتج */
-        .product-title {
-            font-size: 22px;
-            color: #ffffff;
-            margin: 15px 0 10px 0;
-            text-align: right;
-            font-weight: bold;
+        /* تأثير توهج خلف الصورة */
+        .image-wrapper::before {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.3), transparent 70%);
+            border-radius: 50%;
+            filter: blur(30px);
         }
+
+        .product-card img {
+            max-width: 85%;
+            max-height: 85%;
+            object-fit: contain;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.1) rotate(-2deg); /* تكبير مع دوران خفيف */
+        }
+
+        /* محتوى المنتج */
+        .product-content {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        /* تصنيف المنتج (ماوس، لوحة مفاتيح...) */
+        .product-category {
+            color: #3b82f6;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+        }
+
+        .product-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 20px;
+            color: #ffffff;
+            margin-bottom: 12px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
         .product-description {
             font-size: 14px;
             color: #94a3b8;
             line-height: 1.6;
-            margin-bottom: 20px;
-            text-align: right;
-            direction: ltr; /* لجعل النص الإنجليزي للمواصفات يظهر مرتباً من اليسار لليمين */
+            margin-bottom: 15px;
+            flex-grow: 1;
         }
 
-        /* زر الشراء الاحترافي */
+        /* نظام التقييم بالنجوم */
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .stars {
+            color: #f59e0b;
+            font-size: 16px;
+        }
+
+        .rating-count {
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        /* السعر */
+        .price-section {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .current-price {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 26px;
+            font-weight: 700;
+            color: #3b82f6;
+        }
+
+        .old-price {
+            font-size: 16px;
+            color: #64748b;
+            text-decoration: line-through;
+        }
+
+        /* أزرار الشراء */
+        .product-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .add-to-cart {
+            flex: 1;
+            background: #334155;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .add-to-cart:hover {
+            background: #475569;
+        }
+
         .buy-button {
-            display: block;
-            background-color: #2563eb; /* لون أزرق جذاب */
+            flex: 1;
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
             color: white;
             text-decoration: none;
             text-align: center;
-            padding: 14px;
-            font-size: 16px;
-            font-weight: bold;
+            padding: 12px;
+            font-size: 14px;
+            font-weight: 700;
             border-radius: 10px;
-            transition: background-color 0.2s ease;
-            margin-top: auto;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
         }
+
         .buy-button:hover {
-            background-color: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.5);
+        }
+
+        /* ===== قسم المميزات ===== */
+        .features {
+            background: #0f172a;
+            padding: 60px 40px;
+            margin-top: 40px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 30px 20px;
+            background: #1e293b;
+            border-radius: 15px;
+            border: 1px solid #334155;
+            transition: all 0.3s;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            border-color: #3b82f6;
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .feature-item h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .feature-item p {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        /* ===== النشرة البريدية ===== */
+        .newsletter {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(168, 85, 247, 0.1));
+            padding: 60px 40px;
+            text-align: center;
+            border-top: 1px solid #1e293b;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .newsletter h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .newsletter p {
+            color: #94a3b8;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            min-width: 250px;
+            padding: 14px 20px;
+            border-radius: 10px;
+            border: 1px solid #334155;
+            background: #1e293b;
+            color: white;
+            font-size: 15px;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .newsletter-form input:focus {
+            outline: none;
+            border-color: #3b82f6;
+        }
+
+        /* ===== التذييل (Footer) ===== */
+        footer {
+            background: #0a0e1a;
+            padding: 50px 40px 20px;
+            border-top: 1px solid #1e293b;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: #3b82f6;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 14px;
+        }
+
+        .footer-section a:hover {
+            color: #3b82f6;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: #1e293b;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            transition: all 0.3s;
+            border: 1px solid #334155;
+        }
+
+        .social-links a:hover {
+            background: #3b82f6;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #1e293b;
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        /* ===== التجاوب مع الشاشات الصغيرة ===== */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* إخفاء روابط التنقل على الموبايل */
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .stats {
+                gap: 30px;
+            }
+
+            .stat-number {
+                font-size: 32px;
+            }
+
+            .products-container {
+                padding: 20px;
+            }
+
+            .section-header h2 {
+                font-size: 28px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>🎮 متجر الجيمينج الاحترافي 🎮</h1>
-        <p>أفضل الماوسات والإكسسوارات الموثوقة للاعبين المحترفين</p>
-    </header>
+    <!-- ===== شريط التنقل العلوي ===== -->
+    <nav>
+        <a href="#" class="logo">🎮 <span>PRO GAMING</span></a>
+        
+        <!-- روابط التنقل الرئيسية -->
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
 
+        <!-- أيقونة السلة مع عدد المنتجات -->
+        <div class="cart-icon" aria-label="Shopping Cart">
+            🛒
+            <span class="cart-count">0</span>
+        </div>
+    </nav>
+
+    <!-- ===== القسم الرئيسي الترحيبي ===== -->
+    <section class="hero" id="home">
+        <span class="hero-badge">⚡ FREE SHIPPING ON ORDERS OVER $50</span>
+        <h1>LEVEL UP YOUR<br>GAMING EXPERIENCE</h1>
+        <p>Premium gaming mice and accessories trusted by professional gamers worldwide. Dominate every match with the best gear.</p>
+        
+        <!-- أزرار القسم الرئيسي -->
+        <div class="hero-buttons">
+            <a href="#products" class="btn-primary">Shop Now →</a>
+            <a href="#features" class="btn-secondary">Learn More</a>
+        </div>
+    </section>
+
+    <!-- ===== إحصائيات المتجر ===== -->
+    <div class="stats">
+        <div class="stat-item">
+            <span class="stat-number">50K+</span>
+            <span class="stat-label">Happy Gamers</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">200+</span>
+            <span class="stat-label">Products</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">4.9★</span>
+            <span class="stat-label">Average Rating</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">24/7</span>
+            <span class="stat-label">Support</span>
+        </div>
+    </div>
+
+    <!-- ===== عنوان قسم المنتجات ===== -->
+    <div class="section-header" id="products">
+        <h2>🔥 TOP GAMING MICE</h2>
+        <p>Hand-picked by professional gamers for ultimate performance</p>
+    </div>
+
+    <!-- ===== حاوية المنتجات ===== -->
     <div class="products-container">
 
+        <!-- المنتج الأول: Logitech G502 Hero -->
         <div class="product-card">
-            <div class="image-wrapper">
-                <img src="G502.webp" alt="Logitech G502 Hero">
+            <!-- شارات المنتج -->
+            <div class="product-badges">
+                <span class="badge badge-bestseller">🔥 Bestseller</span>
             </div>
             
-            <h2 class="product-title">Logitech G502 Hero</h2>
+            <!-- زر المفضلة -->
+            <button class="wishlist-btn" aria-label="Add to wishlist">♡</button>
             
-            <p class="product-description">
-                Hero High Performance Wired Gaming Mouse, Hero 25K Sensor, 25,600 DPI, RGB, Adjustable Weights, 11 Programmable Buttons, On-Board Memory, PC/Mac - Black.
-            </p>
-            
-            <a href="https://amzn.to/4oqR46w" target="_blank" class="buy-button">اشترِ الآن من أمازون</a>
-        </div>
-
-        <div class="product-card">
             <div class="image-wrapper">
-                <img src="Razer Basilisk V3 .webp" alt="Razer Basilisk V3">
+                <!-- استبدل الرابط بصورتك الفعلية -->
+                <img src="https://m.media-amazon.com/images/I/61VxT4hL+uL._AC_SL1500_.jpg" alt="Logitech G502 Hero" loading="lazy" onerror="this.src='https://via.placeholder.com/300x260/1e293b/3b82f6?text=G502+Hero'">
             </div>
             
-            <h2 class="product-title">Razer Basilisk V3</h2>
-            
-            <p class="product-description">
-                Razer Basilisk V3 Customizable Ergonomic Gaming Mouse: Fastest Gaming Mouse Switch - Chroma RGB Lighting - 26K DPI Optical Sensor - 11 Programmable Buttons - HyperScroll Tilt Wheel - Classic Black.
-            </p>
-            
-            <a href="https://amzn.to/4awV2F1" target="_blank" class="buy-button">اشترِ الآن من أمازون</a>
+            <div class="product-content">
+                <span class="product-category">Gaming Mouse</span>
+                <h2 class="product-title">Logitech G502 Hero</h2>
+                
+                <!-- نظام التقييم -->
+                <div class="rating">
+                    <span class="stars">★★★★★</span>
+                    <span class="rating-count">(2,450 reviews)</span>
+                </div>
+                
+                <p class="product-description">
+                    Hero 25K sensor, 25,600 DPI, RGB lighting, 11 programmable buttons, adjustable weights, on-board memory.
+                </p>
+                
+                <!-- السعر -->
+                <div class="price-section">
+                    <span class="current-price">$49.99</span>
+                    <span class="old-price">$69.99</span>
+                </div>
+                
+                <!-- أزرار الشراء -->
+                <div class="product-actions">
+                    <button class="add-to-cart">🛒 Add to Cart</button>
+                    <a href="https://amzn.to/4oqR46w" target="_blank" rel="noopener noreferrer" class="buy-button">Buy Now</a>
+                </div>
+            </div>
         </div>
 
+        <!-- المنتج الثاني: Razer Basilisk V3 -->
+        <div class="product-card">
+            <div class="product-badges">
+                <span class="badge badge-new">✨ New</span>
+            </div>
+            
+            <button class="wishlist-btn" aria-label="Add to wishlist">♡</button>
+            
+            <div class="image-wrapper">
+                <img src="https://m.media-amazon.com/images/I/61lWdU+GURL._AC_SL1500_.jpg" alt="Razer Basilisk V3" loading="lazy" onerror="this.src='https://via.placeholder.com/300x260/1e293b/3b82f6?text=Basilisk+V3'">
+            </div>
+            
+            <div class="product-content">
+                <span class="product-category">Gaming Mouse</span>
+                <h2 class="product-title">Razer Basilisk V3</h2>
+                
+                <div class="rating">
+                    <span class="stars">★★★★★</span>
+                    <span class="rating-count">(1,823 reviews)</span>
+                </div>
+                
+                <p class="product-description">
+                    Ergonomic design, Chroma RGB, 26K DPI optical sensor, 11 programmable buttons, HyperScroll tilt wheel.
+                </p>
+                
+                <div class="price-section">
+                    <span class="current-price">$69.99</span>
+                    <span class="old-price">$89.99</span>
+                </div>
+                
+                <div class="product-actions">
+                    <button class="add-to-cart">🛒 Add to Cart</button>
+                    <a href="https://amzn.to/4awV2F1" target="_blank" rel="noopener noreferrer" class="buy-button">Buy Now</a>
+                </div>
+            </div>
         </div>
+
+        <!-- المنتج الثالث: Logitech G Pro X Superlight -->
+        <div class="product-card">
+            <div class="product-badges">
+                <span class="badge badge-sale">-25% OFF</span>
+            </div>
+            
+            <button class="wishlist-btn" aria-label="Add to wishlist">♡</button>
+            
+            <div class="image-wrapper">
+                <img src="https://m.media-amazon.com/images/I/51p4+Kq2URL._AC_SL1500_.jpg" alt="Logitech G Pro X Superlight" loading="lazy" onerror="this.src='https://via.placeholder.com/300x260/1e293b/3b82f6?text=G+Pro+X'">
+            </div>
+            
+            <div class="product-content">
+                <span class="product-category">Wireless Gaming Mouse</span>
+                <h2 class="product-title">Logitech G Pro X Superlight</h2>
+                
+                <div class="rating">
+                    <span class="stars">★★★★★</span>
+                    <span class="rating-count">(3,120 reviews)</span>
+                </div>
+                
+                <p class="product-description">
+                    Ultra-lightweight (63g), HERO 25K sensor, wireless, 70-hour battery life, used by pro esports athletes.
+                </p>
+                
+                <div class="price-section">
+                    <span class="current-price">$119.99</span>
+                    <span class="old-price">$159.99</span>
+                </div>
+                
+                <div class="product-actions">
+                    <button class="add-to-cart">🛒 Add to Cart</button>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="buy-button">Buy Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- المنتج الرابع: Razer DeathAdder V3 -->
+        <div class="product-card">
+            <div class="product-badges">
+                <span class="badge badge-bestseller">🔥 Hot</span>
+            </div>
+            
+            <button class="wishlist-btn" aria-label="Add to wishlist">♡</button>
+            
+            <div class="image-wrapper">
+                <img src="https://m.media-amazon.com/images/I/61xX+3eQURL._AC_SL1500_.jpg" alt="Razer DeathAdder V3" loading="lazy" onerror="this.src='https://via.placeholder.com/300x260/1e293b/3b82f6?text=DeathAdder+V3'">
+            </div>
+            
+            <div class="product-content">
+                <span class="product-category">Gaming Mouse</span>
+                <h2 class="product-title">Razer DeathAdder V3</h2>
+                
+                <div class="rating">
+                    <span class="stars">★★★★★</span>
+                    <span class="rating-count">(987 reviews)</span>
+                </div>
+                
+                <p class="product-description">
+                    Ultra-lightweight 59g, Focus Pro 30K sensor, ergonomic design, 90-hour battery, hyper speed wireless.
+                </p>
+                
+                <div class="price-section">
+                    <span class="current-price">$89.99</span>
+                    <span class="old-price">$109.99</span>
+                </div>
+                
+                <div class="product-actions">
+                    <button class="add-to-cart">🛒 Add to Cart</button>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="buy-button">Buy Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- المنتج الخامس: SteelSeries Rival 600 -->
+        <div class="product-card">
+            <div class="product-badges">
+                <span class="badge badge-new">✨ New</span>
+            </div>
+            
+            <button class="wishlist-btn" aria-label="Add to wishlist">♡</button>
+            
+            <div class="image-wrapper">
+                <img src="https://m.media-amazon.com/images/I/71V5q7J+URL._AC_SL1500_.jpg" alt="SteelSeries Rival 600" loading="lazy" onerror="this.src='https://via.placeholder.com/300x260/1e293b/3b82f6?text=Rival+600'">
+            </div>
+            
+            <div class="product-content">
+                <span class="product-category">Gaming Mouse</span>
+                <h2 class="product-title">SteelSeries Rival 600</h2>
+                
+                <div class="rating">
+                    <span class="stars">★★★★☆</span>
+                    <span class="rating-count">(756 reviews)</span>
+                </div>
+                
+                <p class="product-description">
+                    Dual sensor system, adjustable weight, TrueMove3 sensor, 12,000 CPI, customizable RGB, 7 programmable buttons.
+                </p>
+                
+                <div class="price-section">
+                    <span class="current-price">$59.99</span>
+                    <span class="old-price">$79.99</span>
+                </div>
+                
+                <div class="product-actions">
+                    <button class="add-to-cart">🛒 Add to Cart</button>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="buy-button">Buy Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- المنتج السادس: Corsair Dark Core RGB Pro -->
+        <div class="product-card">
+            <div class="product-badges">
+                <span class="badge badge-sale">-30% OFF</span>
+            </div>
+            
+            <button class="wishlist-btn" aria-label="Add to wishlist">♡</button>
+            
+            <div class="image-wrapper">
+                <img src="https://m.media-amazon.com/images/I/71jJ4Z+URL._AC_SL1500_.jpg" alt="Corsair Dark Core RGB Pro" loading="lazy" onerror="this.src='https://via.placeholder.com/300x260/1e293b/3b82f6?text=Dark+Core+Pro'">
+            </div>
+            
+            <div class="product-content">
+                <span class="product-category">Wireless Gaming Mouse</span>
+                <h2 class="product-title">Corsair Dark Core RGB Pro</h2>
+                
+                <div class="rating">
+                    <span class="stars">★★★★★</span>
+                    <span class="rating-count">(1,245 reviews)</span>
+                </div>
+                
+                <p class="product-description">
+                    SLIPSTREAM wireless, 18,000 DPI, 9 programmable buttons, Qi wireless charging, contoured shape.
+                </p>
+                
+                <div class="price-section">
+                    <span class="current-price">$79.99</span>
+                    <span class="old-price">$109.99</span>
+                </div>
+                
+                <div class="product-actions">
+                    <button class="add-to-cart">🛒 Add to Cart</button>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="buy-button">Buy Now</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ===== قسم المميزات ===== -->
+    <section class="features" id="features">
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon">🚚</div>
+                <h3>FREE SHIPPING</h3>
+                <p>On all orders over $50 worldwide</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🔒</div>
+                <h3>SECURE PAYMENT</h3>
+                <p>100% secure payment processing</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">↩️</div>
+                <h3>30-DAY RETURNS</h3>
+                <p>Easy returns within 30 days</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">💬</div>
+                <h3>24/7 SUPPORT</h3>
+                <p>Always here to help you</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== قسم النشرة البريدية ===== -->
+    <section class="newsletter">
+        <h2>JOIN THE GAMING SQUAD</h2>
+        <p>Subscribe and get 10% OFF your first order + exclusive deals</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thanks for subscribing!');">
+            <input type="email" placeholder="Enter your email address" required aria-label="Email address">
+            <button type="submit" class="btn-primary">Subscribe</button>
+        </form>
+    </section>
+
+    <!-- ===== التذييل ===== -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>PRO GAMING</h3>
+                <p style="color: #94a3b8; font-size: 14px; margin-bottom: 15px;">
+                    Your trusted source for premium gaming gear since 2020.
+                </p>
+                <!-- روابط التواصل الاجتماعي -->
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="YouTube">📺</a>
+                    <a href="#" aria-label="Discord">💬</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>SHOP</h3>
+                <ul>
+                    <li><a href="#">Gaming Mice</a></li>
+                    <li><a href="#">Keyboards</a></li>
+                    <li><a href="#">Headsets</a></li>
+                    <li><a href="#">Mousepads</a></li>
+                    <li><a href="#">Accessories</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>SUPPORT</h3>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Track Order</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>COMPANY</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Affiliate Program</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- حقوق النشر -->
+        <div class="footer-bottom">
+            <p>© 2026 Pro Gaming Store. All rights reserved. | Made with ❤️ for Gamers</p>
+        </div>
+    </footer>
+
+    <!-- ===== كود JavaScript للتفاعلات ===== -->
+    <script>
+        // ===== عداد السلة =====
+        // هذه الدالة تزيد عدد المنتجات في السلة عند الضغط على زر "Add to Cart"
+        let cartCount = 0;
+        const cartCountElement = document.querySelector('.cart-count');
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                cartCount++;
+                cartCountElement.textContent = cartCount;
+                
+                // تأثير حركي عند إضافة منتج
+                cartCountElement.style.transform = 'scale(1.5)';
+                setTimeout(() => {
+                    cartCountElement.style.transform = 'scale(1)';
+                }, 200);
+                
+                // رسالة تأكيد
+                this.textContent = '✓ Added!';
+                this.style.background = '#10b981';
+                setTimeout(() => {
+                    this.textContent = '🛒 Add to Cart';
+                    this.style.background = '#334155';
+                }, 1500);
+            });
+        });
+
+        // ===== زر المفضلة (القلب) =====
+        // هذه الدالة تحول القلب من فارغ إلى ممتلئ عند الضغط عليه
+        const wishlistButtons = document.querySelectorAll('.wishlist-btn');
+        wishlistButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                if (this.textContent === '♡') {
+                    this.textContent = '♥';
+                    this.style.background = '#ef4444';
+                    this.style.color = 'white';
+                } else {
+                    this.textContent = '♡';
+                    this.style.background = 'rgba(15, 23, 42, 0.8)';
+                    this.style.color = 'inherit';
+                }
+            });
+        });
+
+        // ===== التمرير السلس للروابط =====
+        // هذه الدالة تجعل التنقل بين أقسام الصفحة سلساً
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
