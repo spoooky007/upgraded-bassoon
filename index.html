@@ -1,487 +1,1095 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-    <!-- إعدادات أساسية للصفحة -->
+    <!-- ============================================================
+         إعدادات أساسية للصفحة
+         ============================================================ -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- معلومات SEO لمحركات البحث -->
-    <title>Pro Game Store | Best Gaming Mice - Top Picks 2026</title>
-    <meta name="description" content="Top-rated gaming mice hand-picked for pro gamers. Find the perfect mouse from Logitech, Razer, and more.">
-    
-    <!-- أيقونة الموقع في المتصفح -->
+    <title>Gear Pulse | Best Gaming Gear – Top Picks 2026</title>
+    <meta name="description" content="Hand-picked gaming gear trusted by pro gamers. Find the best mice, keyboards, and headsets on Amazon.">
+
+    <!-- أيقونة الموقع في التبويب -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
 
-    <!-- استيراد خط Google احترافي -->
+    <!-- خطوط Google للتصميم -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
     <style>
-        /* ===== إعدادات عامة للصفحة ===== */
-        * {
+
+        /* ============================================================
+           🎨 الألوان والمتغيرات الرئيسية للموقع
+           غيّر هذه القيم لتغيير هوية الموقع بالكامل بسهولة
+           ============================================================ */
+        :root {
+            --color-bg-page:       #080c14;   /* خلفية الصفحة الداكنة جداً */
+            --color-bg-nav:        rgba(10, 14, 24, 0.92); /* خلفية شريط التنقل */
+            --color-bg-card:       #0f1623;   /* خلفية بطاقة المنتج */
+            --color-bg-card-hover: #131c2e;   /* لون البطاقة عند المرور عليها */
+            --color-bg-image:      #0a1020;   /* خلفية منطقة الصورة */
+            --color-border:        rgba(255,255,255,0.07); /* حدود خفيفة */
+            --color-border-hover:  rgba(99,179,237,0.5);  /* حدود عند الـ hover */
+            --color-accent-blue:   #63b3ed;   /* اللون الأزرق الرئيسي */
+            --color-accent-purple: #9f7aea;   /* اللون البنفسجي */
+            --color-accent-amber:  #f6ad55;   /* لون زر أمازون الذهبي */
+            --color-text-primary:  #f0f4ff;   /* النص الأساسي الأبيض */
+            --color-text-muted:    #7a8ba8;   /* النص الثانوي الباهت */
+            --color-text-faint:    #4a5568;   /* نص الهوامش الصغيرة */
+        }
+
+        /* ============================================================
+           إعادة تعيين الـ CSS الافتراضي
+           ============================================================ */
+        *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        /* ============================================================
+           الإعدادات العامة للـ body
+           ============================================================ */
         body {
-            font-family: 'Rajdhani', 'Segoe UI', sans-serif;
-            background-color: #0a0e1a; /* خلفية داكنة احترافية */
-            color: #f8fafc;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            background-color: var(--color-bg-page);
+            color: var(--color-text-primary);
             line-height: 1.6;
             overflow-x: hidden;
+            /* خط دقيق أفقي للتأثير البصري التقني */
+            background-image: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 80px,
+                rgba(99,179,237,0.015) 80px,
+                rgba(99,179,237,0.015) 81px
+            );
         }
 
-        /* خلفية متحركة بتأثير الجيمينج */
+        /* ============================================================
+           التوهج العلوي الأيسر - لمسة بصرية هادئة
+           ============================================================ */
         body::before {
             content: '';
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(168, 85, 247, 0.08) 0%, transparent 50%);
-            z-index: -1;
+            top: -200px;
+            left: -200px;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(99,179,237,0.06) 0%, transparent 60%);
             pointer-events: none;
+            z-index: 0;
         }
 
-        /* ===== شريط التنقل العلوي البسيط ===== */
+        /* ============================================================
+           🔝 شريط التنقل العلوي
+           ============================================================ */
         nav {
             position: sticky;
             top: 0;
-            background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 15px 40px;
+            background: var(--color-bg-nav);
+            /* تأثير التمويه الزجاجي للشريط */
+            -webkit-backdrop-filter: blur(16px);
+            backdrop-filter: blur(16px);
+            padding: 14px 48px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #1e293b;
+            border-bottom: 1px solid var(--color-border);
             z-index: 100;
         }
 
-        .logo {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 22px;
-            font-weight: 900;
-            color: #3b82f6;
-            text-decoration: none;
+        /* ============================================================
+           🖼️ منطقة اللوغو في شريط التنقل
+           ضع لوغوك الخاص هنا - اقرأ التعليمات في قسم اللوغو بالأسفل
+           ============================================================ */
+        .logo-wrapper {
             display: flex;
             align-items: center;
             gap: 10px;
+            text-decoration: none;
         }
 
-        .logo span {
-            background: linear-gradient(135deg, #3b82f6, #a855f7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        /*
+         * =========================================================
+         * 📌 مكان اللوغو الخاص بك
+         * =========================================================
+         * عندك خياران:
+         *
+         * الخيار الأول - صورة لوغو (PNG أو SVG):
+         *   1. ضع ملف اللوغو (logo.png) في نفس مجلد index.html
+         *   2. في الـ HTML أسفل، ابحث عن العنصر <img class="logo-img">
+         *   3. غيّر src="logo.png" لاسم ملفك الحقيقي
+         *
+         * الخيار الثاني - نص فقط (Text Logo):
+         *   1. احذف العنصر <img class="logo-img"> بالكامل
+         *   2. سيظهر تلقائياً النص "GEAR PULSE" بتصميم متدرج
+         * =========================================================
+         */
+        .logo-img {
+            height: 38px;    /* 👈 غيّر الرقم لتحكم في حجم اللوغو */
+            width: auto;
+            object-fit: contain;
+            display: block;
         }
 
-        /* ===== القسم الرئيسي (Hero Section) ===== */
-        .hero {
-            padding: 70px 40px 50px;
-            text-align: center;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            background: rgba(59, 130, 246, 0.15);
-            color: #3b82f6;
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            border: 1px solid rgba(59, 130, 246, 0.3);
-        }
-
-        .hero h1 {
+        /* النص النصي للوغو - يظهر فقط إذا لم توجد صورة */
+        .logo-text {
             font-family: 'Orbitron', sans-serif;
-            font-size: 52px;
+            font-size: 20px;
             font-weight: 900;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #ffffff 0%, #3b82f6 50%, #a855f7 100%);
+            letter-spacing: 1px;
+            background: linear-gradient(120deg, var(--color-accent-blue), var(--color-accent-purple));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            line-height: 1.2;
+            background-clip: text;
         }
 
-        .hero p {
-            font-size: 18px;
-            color: #94a3b8;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* ===== عنوان قسم المنتجات ===== */
-        .section-header {
-            text-align: center;
-            padding: 40px 20px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-header h2 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 34px;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .section-header p {
-            color: #94a3b8;
-            font-size: 16px;
-        }
-
-        /* ===== حاوية المنتجات (الشبكة) ===== */
-        .products-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            padding: 20px 40px 60px;
-            max-width: 1300px;
-            margin: 0 auto;
-        }
-
-        /* ===== بطاقة المنتج البسيطة والمركزة ===== */
-        .product-card {
-            background: linear-gradient(145deg, #1e293b, #172033);
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid #334155;
-            position: relative;
-        }
-
-        /* حركة عند مرور الماوس */
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(59, 130, 246, 0.25);
-            border-color: #3b82f6;
-        }
-
-        /* شارة "Top Pick" للمنتج المميز */
-        .top-pick-badge {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background: linear-gradient(135deg, #f59e0b, #d97706);
-            color: white;
-            padding: 6px 14px;
+        /* رقم إشعارات صغير (اختياري) */
+        .nav-badge {
+            background: rgba(99,179,237,0.15);
+            color: var(--color-accent-blue);
+            border: 1px solid rgba(99,179,237,0.2);
+            padding: 4px 14px;
             border-radius: 20px;
             font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
+            font-weight: 600;
             letter-spacing: 0.5px;
-            z-index: 2;
-            box-shadow: 0 4px 10px rgba(245, 158, 11, 0.4);
         }
 
-        /* إطار الصورة */
-        .image-wrapper {
-            width: 100%;
-            height: 260px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg, #0f172a, #1e293b);
-            overflow: hidden;
-            position: relative;
-        }
 
-        /* تأثير توهج خلف الصورة */
-        .image-wrapper::before {
-            content: '';
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.3), transparent 70%);
-            border-radius: 50%;
-            filter: blur(30px);
-        }
-
-        .product-card img {
-            max-width: 85%;
-            max-height: 85%;
-            object-fit: contain;
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        /* ============================================================
+           🦸 قسم الـ Hero الرئيسي (أعلى الصفحة)
+           ============================================================ */
+        .hero {
+            padding: 90px 48px 60px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
             position: relative;
             z-index: 1;
         }
 
-        .product-card:hover img {
-            transform: scale(1.1); /* تكبير بسيط للصورة */
-        }
-
-        /* محتوى المنتج */
-        .product-content {
-            padding: 25px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .product-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 22px;
-            color: #ffffff;
-            margin-bottom: 12px;
-            font-weight: 700;
-            line-height: 1.3;
-        }
-
-        .product-description {
-            font-size: 15px;
-            color: #94a3b8;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            flex-grow: 1;
-        }
-
-        /* زر الشراء من أمازون - العنصر الأهم! */
-        .buy-button {
-            display: flex;
+        /* شارة "TOP PICKS" الصغيرة */
+        .hero-eyebrow {
+            display: inline-flex;
             align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background: linear-gradient(135deg, #f59e0b, #d97706); /* لون أمازون البرتقالي */
-            color: white;
-            text-decoration: none;
-            text-align: center;
-            padding: 16px;
-            font-size: 16px;
-            font-weight: 700;
-            border-radius: 12px;
-            transition: all 0.3s;
-            box-shadow: 0 5px 20px rgba(245, 158, 11, 0.3);
-            font-family: 'Rajdhani', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .buy-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(245, 158, 11, 0.5);
-            background: linear-gradient(135deg, #d97706, #b45309);
-        }
-
-        /* سهم متحرك داخل الزر */
-        .buy-button .arrow {
-            transition: transform 0.3s;
-        }
-
-        .buy-button:hover .arrow {
-            transform: translateX(5px);
-        }
-
-        /* ملاحظة صغيرة أسفل الزر */
-        .affiliate-note {
-            text-align: center;
-            color: #64748b;
+            gap: 8px;
+            background: rgba(99,179,237,0.08);
+            color: var(--color-accent-blue);
+            border: 1px solid rgba(99,179,237,0.18);
+            padding: 7px 20px;
+            border-radius: 100px;
             font-size: 12px;
-            margin-top: 12px;
-            font-style: italic;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 28px;
         }
 
-        /* ===== قسم الإفصاح عن العمولة (مهم قانونياً) ===== */
-        .disclosure {
-            background: #0f172a;
-            padding: 30px 40px;
-            text-align: center;
-            border-top: 1px solid #1e293b;
-            border-bottom: 1px solid #1e293b;
+        /* نقطة متحركة بجانب الشارة */
+        .hero-eyebrow::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--color-accent-blue);
+            animation: pulse 2s ease-in-out infinite;
         }
 
-        .disclosure p {
-            color: #94a3b8;
-            font-size: 13px;
-            max-width: 800px;
-            margin: 0 auto;
-            line-height: 1.7;
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50%       { opacity: 0.4; transform: scale(0.7); }
         }
 
-        .disclosure strong {
-            color: #3b82f6;
+        /* العنوان الكبير */
+        .hero h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(36px, 5vw, 58px); /* حجم متجاوب تلقائياً */
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: 22px;
+            letter-spacing: -0.5px;
         }
 
-        /* ===== التذييل البسيط ===== */
-        footer {
-            background: #0a0e1a;
-            padding: 30px 40px;
-            text-align: center;
-            border-top: 1px solid #1e293b;
+        /* الكلمات الملونة في العنوان */
+        .hero h1 .highlight {
+            background: linear-gradient(120deg, var(--color-accent-blue) 0%, var(--color-accent-purple) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .footer-bottom {
-            color: #64748b;
-            font-size: 14px;
-            margin-bottom: 10px;
+        /* النص الوصفي تحت العنوان */
+        .hero-sub {
+            font-size: 17px;
+            color: var(--color-text-muted);
+            max-width: 580px;
+            margin: 0 auto 36px;
+            line-height: 1.75;
         }
 
-        .footer-links {
+        /* إحصائيات صغيرة في الـ hero */
+        .hero-stats {
             display: flex;
-            gap: 20px;
+            gap: 32px;
             justify-content: center;
             flex-wrap: wrap;
         }
 
-        .footer-links a {
-            color: #94a3b8;
-            text-decoration: none;
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .stat-number {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--color-text-primary);
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: var(--color-text-muted);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        /* خط فاصل تحت الـ hero */
+        .hero-divider {
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--color-accent-blue), transparent);
+            margin: 44px auto 0;
+        }
+
+
+        /* ============================================================
+           📦 رأس قسم المنتجات
+           ============================================================ */
+        .section-header {
+            max-width: 1240px;
+            margin: 56px auto 0;
+            padding: 0 48px 28px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .section-title-group h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .section-title-group p {
+            color: var(--color-text-muted);
+            font-size: 14px;
+        }
+
+        /* عداد المنتجات على اليمين */
+        .product-count {
             font-size: 13px;
-            transition: color 0.3s;
+            color: var(--color-text-faint);
+            white-space: nowrap;
+        }
+
+        .product-count span {
+            color: var(--color-accent-blue);
+            font-weight: 600;
+        }
+
+
+        /* ============================================================
+           🗂️ فلاتر تصنيف المنتجات (اختياري)
+           لإضافة فئات: انسخ <button class="filter-btn"> وغيّر النص
+           ============================================================ */
+        .filters-bar {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 20px 48px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: transparent;
+            color: var(--color-text-muted);
+            border: 1px solid var(--color-border);
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 500;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: rgba(99,179,237,0.1);
+            color: var(--color-accent-blue);
+            border-color: rgba(99,179,237,0.3);
+        }
+
+
+        /* ============================================================
+           🎴 شبكة بطاقات المنتجات (Grid)
+           ============================================================ */
+        .products-grid {
+            display: grid;
+            /* عمودان على الشاشات الكبيرة، عمود واحد على الموبايل */
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 24px;
+            padding: 28px 48px 80px;
+            max-width: 1240px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+
+        /* ============================================================
+           🃏 بطاقة المنتج الفردية
+           ============================================================ */
+        .product-card {
+            background: var(--color-bg-card);
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            /* انتقال سلس عند المرور */
+            transition: border-color 0.3s ease, transform 0.3s ease, background 0.3s ease;
+        }
+
+        /* تأثير الرفع والإضاءة عند المرور على البطاقة */
+        .product-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--color-border-hover);
+            background: var(--color-bg-card-hover);
+        }
+
+        /* خط ملوّن علوي للبطاقة المميزة */
+        .product-card.featured::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--color-accent-blue), var(--color-accent-purple));
+        }
+
+
+        /* ============================================================
+           🏷️ شارات البطاقة (Top Pick / Editor's Choice / إلخ)
+           لإضافة شارة جديدة: أضف class="badge badge-green" وغيّر اللون
+           ============================================================ */
+        .badges-row {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            display: flex;
+            gap: 8px;
+            z-index: 3;
+            flex-wrap: wrap;
+            max-width: calc(100% - 28px);
+        }
+
+        /* الشارة الأساسية */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 5px 12px;
+            border-radius: 100px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        /* شارة ذهبية: لأفضل منتج */
+        .badge-gold {
+            background: rgba(246,173,85,0.15);
+            color: #f6ad55;
+            border: 1px solid rgba(246,173,85,0.25);
+        }
+
+        /* شارة زرقاء: لاختيار المحرر */
+        .badge-blue {
+            background: rgba(99,179,237,0.12);
+            color: var(--color-accent-blue);
+            border: 1px solid rgba(99,179,237,0.22);
+        }
+
+        /* شارة خضراء: للقيمة الجيدة مقابل السعر */
+        .badge-green {
+            background: rgba(72,187,120,0.12);
+            color: #68d391;
+            border: 1px solid rgba(72,187,120,0.22);
+        }
+
+
+        /* ============================================================
+           🖼️ منطقة صورة المنتج
+           ============================================================ */
+        .card-image-area {
+            height: 240px;
+            background: var(--color-bg-image);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* التوهج خلف الصورة */
+        .card-image-area::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 60%, rgba(99,179,237,0.1) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        /* الصورة نفسها */
+        .card-image-area img {
+            max-width: 80%;
+            max-height: 80%;
+            object-fit: contain;
+            position: relative;
+            z-index: 1;
+            transition: transform 0.4s ease;
+            /* ظل خفيف تحت الصورة */
+            filter: drop-shadow(0 12px 24px rgba(0,0,0,0.5));
+        }
+
+        /* تكبير بسيط عند المرور */
+        .product-card:hover .card-image-area img {
+            transform: scale(1.06) translateY(-4px);
+        }
+
+
+        /* ============================================================
+           📝 محتوى نص البطاقة
+           ============================================================ */
+        .card-body {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            gap: 12px;
+        }
+
+        /* اسم المنتج */
+        .card-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--color-text-primary);
+            line-height: 1.3;
+        }
+
+        /* مواصفات صغيرة تحت الاسم (DPI، أزرار، إلخ) */
+        .card-specs {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        /* علامة مواصفة واحدة */
+        .spec-tag {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid var(--color-border);
+            color: var(--color-text-muted);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        /* وصف المنتج */
+        .card-desc {
+            font-size: 14px;
+            color: var(--color-text-muted);
+            line-height: 1.7;
+            flex: 1;
+        }
+
+        /* خط فاصل */
+        .card-divider {
+            height: 1px;
+            background: var(--color-border);
+            margin: 4px 0;
+        }
+
+
+        /* ============================================================
+           🛒 زر الشراء من أمازون
+           هذا هو أهم عنصر في الصفحة لتحويل الزيارات لعمولات
+           ============================================================ */
+        .amazon-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(135deg, #f6ad55, #ed8936);
+            color: #1a1000;
+            text-decoration: none;
+            padding: 15px 20px;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 0.3px;
+            transition: all 0.25s ease;
+            /* ظل ملوّن حول الزر */
+            box-shadow: 0 4px 20px rgba(246,173,85,0.25);
+        }
+
+        .amazon-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(246,173,85,0.40);
+            background: linear-gradient(135deg, #fbb75d, #f6963b);
+        }
+
+        .amazon-btn:active {
+            transform: translateY(0);
+        }
+
+        /* الجانب الأيسر من الزر: أيقونة + نص */
+        .btn-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* أيقونة سلة التسوق في الزر */
+        .btn-icon {
+            font-size: 18px;
+            line-height: 1;
+        }
+
+        /* السهم على اليمين */
+        .btn-arrow {
+            font-size: 16px;
+            transition: transform 0.25s ease;
+        }
+
+        .amazon-btn:hover .btn-arrow {
+            transform: translateX(4px);
+        }
+
+        /* ملاحظة شحن مجاني */
+        .card-footer-note {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            color: var(--color-text-faint);
+        }
+
+        .card-footer-note::before {
+            content: '✓';
+            color: #68d391;
+            font-weight: 700;
+        }
+
+
+        /* ============================================================
+           📢 قسم الإفصاح عن العمولة
+           مطلوب قانونياً لبرامج الأفيلييت
+           ============================================================ */
+        .disclosure-bar {
+            background: rgba(255,255,255,0.02);
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+            padding: 24px 48px;
+        }
+
+        .disclosure-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .disclosure-inner p {
+            font-size: 13px;
+            color: var(--color-text-faint);
+            line-height: 1.8;
+        }
+
+        .disclosure-inner strong {
+            color: var(--color-text-muted);
+            font-weight: 600;
+        }
+
+
+        /* ============================================================
+           🦶 التذييل (Footer)
+           ============================================================ */
+        footer {
+            padding: 40px 48px;
+            max-width: 1240px;
+            margin: 0 auto;
+        }
+
+        /* ============================================================
+           🖼️ منطقة اللوغو في الفوتر
+           ============================================================ */
+        .footer-logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .footer-logo-img {
+            height: 30px;   /* 👈 حجم اللوغو في الفوتر (أصغر من الـ nav) */
+            width: auto;
+            object-fit: contain;
+            opacity: 0.7;
+        }
+
+        .footer-logo-text {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--color-text-muted);
+        }
+
+        .footer-desc {
+            font-size: 13px;
+            color: var(--color-text-faint);
+            margin-bottom: 28px;
+            max-width: 340px;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            padding-top: 24px;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .footer-copy {
+            font-size: 13px;
+            color: var(--color-text-faint);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            font-size: 13px;
+            color: var(--color-text-faint);
+            text-decoration: none;
+            transition: color 0.2s;
         }
 
         .footer-links a:hover {
-            color: #3b82f6;
+            color: var(--color-accent-blue);
         }
 
-        /* ===== التجاوب مع الشاشات الصغيرة ===== */
+
+        /* ============================================================
+           📱 تجاوب الموبايل (Responsive)
+           يعمل تلقائياً على الشاشات الصغيرة
+           ============================================================ */
         @media (max-width: 768px) {
+            nav {
+                padding: 14px 20px;
+            }
+
+            .hero {
+                padding: 60px 20px 40px;
+            }
+
             .hero h1 {
-                font-size: 34px;
+                font-size: 32px;
             }
 
-            .hero p {
-                font-size: 16px;
+            .hero-stats {
+                gap: 20px;
             }
 
-            .products-container {
+            .section-header,
+            .filters-bar {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr; /* عمود واحد على الموبايل */
                 padding: 20px;
             }
 
-            .section-header h2 {
-                font-size: 26px;
+            .disclosure-bar {
+                padding: 20px;
             }
 
-            nav {
-                padding: 15px 20px;
+            footer {
+                padding: 32px 20px;
             }
 
-            .logo {
-                font-size: 18px;
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
             }
         }
+
     </style>
 </head>
 <body>
 
-    <!-- ===== شريط التنقل البسيط ===== -->
+    <!-- ============================================================
+         🔝 شريط التنقل
+         ============================================================ -->
     <nav>
-        <a href="#" class="logo">🎮 <span>GEAR PULSE</span></a>
+        <a href="#" class="logo-wrapper">
+
+            <!--
+                ★★★ مكان اللوغو الخاص بك ★★★
+                ─────────────────────────────────────────────────────
+                لوضع لوغوك:
+                  1. ضع ملف اللوغو (مثلاً: logo.png) في نفس مجلد هذا الملف
+                  2. غيّر "logo.png" أدناه ليطابق اسم ملفك
+                  3. اضبط height في CSS (.logo-img) لتغيير الحجم
+                ─────────────────────────────────────────────────────
+                لإزالة اللوغو واستخدام النص فقط:
+                  احذف سطر <img class="logo-img"> بالكامل
+                ─────────────────────────────────────────────────────
+            -->
+            <img class="logo-img" src="logo.png" alt="Gear Pulse Logo"
+                 onerror="this.style.display='none'">
+            <!-- ↑ onerror: يُخفي الصورة تلقائياً إذا لم يوجد الملف -->
+
+            <span class="logo-text">GEAR PULSE</span>
+
+        </a>
+
+        <!-- شارة صغيرة في زاوية الـ nav (اختياري - احذفها إذا لم تحتجها) -->
+        <span class="nav-badge">⚡ 2026 Top Picks</span>
     </nav>
 
-    <!-- ===== القسم الرئيسي الترحيبي ===== -->
+
+    <!-- ============================================================
+         🦸 قسم الهيرو الرئيسي
+         ============================================================ -->
     <section class="hero">
-        <span class="hero-badge">⚡ TOP PICKS FOR 2026</span>
-        <h1>THE BEST GAMING MICE</h1>
-        <p>Hand-picked gaming mice trusted by professional gamers. Click any product to check the latest price and reviews on Amazon.</p>
+        <div class="hero-eyebrow">Updated June 2026</div>
+
+        <h1>
+            THE BEST<br>
+            <span class="highlight">GAMING GEAR</span>
+        </h1>
+
+        <p class="hero-sub">
+            Hand-picked by pro gamers. Every product is tested, rated, and linked directly to Amazon for the best price.
+        </p>
+
+        <!-- إحصائيات المصداقية -->
+        <div class="hero-stats">
+            <div class="stat-item">
+                <span class="stat-number">12+</span>
+                <span class="stat-label">Products Tested</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">2026</span>
+                <span class="stat-label">Updated Picks</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">Amazon</span>
+                <span class="stat-label">Direct Links</span>
+            </div>
+        </div>
+
+        <div class="hero-divider"></div>
     </section>
 
-    <!-- ===== عنوان قسم المنتجات ===== -->
+
+    <!-- ============================================================
+         📦 رأس قسم المنتجات
+         ============================================================ -->
     <div class="section-header">
-        <h2>🔥 OUR TOP RECOMMENDATIONS</h2>
-        <p>Click to view full details, reviews, and current price on Amazon</p>
+        <div class="section-title-group">
+            <h2>🔥 Top Recommendations</h2>
+            <p>Click any product to see the full details and price on Amazon</p>
+        </div>
+        <div class="product-count">Showing <span>2</span> products</div>
     </div>
 
-    <!-- ===== حاوية المنتجات ===== -->
-    <div class="products-container">
 
-        <!-- المنتج الأول: Logitech G502 Hero -->
-        <div class="product-card">
-            <!-- شارة "الأكثر مبيعاً" - احذفها إذا لم تكن مناسبة -->
-            <span class="top-pick-badge">🏆 #1 Best Seller</span>
-            
-            <div class="image-wrapper">
-                <!-- استبدل الرابط بصورتك الفعلية -->
+    <!-- ============================================================
+         🗂️ فلاتر التصنيف
+         أضف أو احذف أزرار حسب فئاتك
+         ============================================================ -->
+    <div class="filters-bar">
+        <button class="filter-btn active">All Gear</button>
+        <button class="filter-btn">🖱 Mice</button>
+        <!-- أضف فئات هنا: Keyboards, Headsets, إلخ -->
+    </div>
+
+
+    <!-- ============================================================
+         🗃️ شبكة المنتجات
+         لإضافة منتج جديد: انسخ كتلة product-card كاملة وعدّلها
+         ============================================================ -->
+    <div class="products-grid">
+
+
+        <!-- ══════════════════════════════════════════════════════════
+             المنتج الأول: Logitech G502 Hero
+             ══════════════════════════════════════════════════════════ -->
+        <div class="product-card featured">
+
+            <!-- الشارات: غيّر النص أو اللون حسب رأيك -->
+            <div class="badges-row">
+                <span class="badge badge-gold">🏆 #1 Best Seller</span>
+            </div>
+
+            <!-- منطقة الصورة:
+                 استبدل "G502.webp" باسم ملف صورتك الحقيقي -->
+            <div class="card-image-area">
                 <img src="G502.webp" alt="Logitech G502 Hero Gaming Mouse" loading="lazy">
             </div>
-            
-            <div class="product-content">
-                <h2 class="product-title">Logitech G502 Hero</h2>
-                
-                <p class="product-description">
-                    High-performance wired gaming mouse with HERO 25K sensor, 25,600 DPI, RGB lighting, 11 programmable buttons, and adjustable weights. Perfect for FPS and MMO gamers.
+
+            <!-- محتوى البطاقة -->
+            <div class="card-body">
+
+                <!-- اسم المنتج -->
+                <h2 class="card-title">Logitech G502 Hero</h2>
+
+                <!-- مواصفات سريعة: أضف أو احذف spec-tag حسب المنتج -->
+                <div class="card-specs">
+                    <span class="spec-tag">25,600 DPI</span>
+                    <span class="spec-tag">11 Buttons</span>
+                    <span class="spec-tag">RGB</span>
+                    <span class="spec-tag">Wired</span>
+                </div>
+
+                <!-- وصف المنتج -->
+                <p class="card-desc">
+                    High-performance wired gaming mouse with HERO 25K sensor. Adjustable weight system and 11 programmable buttons for full control in FPS and MMO games.
                 </p>
-                
-                <!-- الزر الرئيسي - يذهب مباشرة إلى أمازون -->
-                <a href="https://amzn.to/4oqR46w" target="_blank" rel="noopener noreferrer nofollow" class="buy-button">
-                    <span>Check Price on Amazon</span>
-                    <span class="arrow">→</span>
+
+                <div class="card-divider"></div>
+
+                <!-- زر أمازون: غيّر الرابط href لرابط الأفيلييت الخاص بك -->
+                <a href="https://amzn.to/4oqR46w"
+                   target="_blank"
+                   rel="noopener noreferrer nofollow"
+                   class="amazon-btn">
+                    <span class="btn-left">
+                        <span class="btn-icon">🛒</span>
+                        <span>Check Price on Amazon</span>
+                    </span>
+                    <span class="btn-arrow">→</span>
                 </a>
-                
-                <!-- ملاحظة صغيرة -->
-                <p class="affiliate-note">✓ Free shipping available</p>
+
+                <!-- ملاحظة تحت الزر -->
+                <p class="card-footer-note">Free shipping available</p>
+
             </div>
         </div>
 
-        <!-- المنتج الثاني: Razer Basilisk V3 -->
-        <div class="product-card">
-            <span class="top-pick-badge">⭐ Editor's Choice</span>
-            
-            <div class="image-wrapper">
+
+        <!-- ══════════════════════════════════════════════════════════
+             المنتج الثاني: Razer Basilisk V3
+             ══════════════════════════════════════════════════════════ -->
+        <div class="product-card featured">
+
+            <div class="badges-row">
+                <span class="badge badge-blue">⭐ Editor's Choice</span>
+            </div>
+
+            <!-- استبدل "Razer Basilisk V3 .webp" باسم ملف صورتك -->
+            <div class="card-image-area">
                 <img src="Razer Basilisk V3 .webp" alt="Razer Basilisk V3 Gaming Mouse" loading="lazy">
             </div>
-            
-            <div class="product-content">
-                <h2 class="product-title">Razer Basilisk V3</h2>
-                
-                <p class="product-description">
-                    Customizable ergonomic gaming mouse with Chroma RGB, 26K DPI optical sensor, 11 programmable buttons, and HyperScroll tilt wheel. Designed for comfort during long gaming sessions.
+
+            <div class="card-body">
+
+                <h2 class="card-title">Razer Basilisk V3</h2>
+
+                <div class="card-specs">
+                    <span class="spec-tag">26,000 DPI</span>
+                    <span class="spec-tag">11 Buttons</span>
+                    <span class="spec-tag">Chroma RGB</span>
+                    <span class="spec-tag">Wired</span>
+                </div>
+
+                <p class="card-desc">
+                    Customizable ergonomic mouse with Chroma RGB and HyperScroll tilt wheel. Built for comfort during marathon gaming sessions without sacrificing precision.
                 </p>
-                
-                <a href="https://amzn.to/4awV2F1" target="_blank" rel="noopener noreferrer nofollow" class="buy-button">
-                    <span>Check Price on Amazon</span>
-                    <span class="arrow">→</span>
+
+                <div class="card-divider"></div>
+
+                <a href="https://amzn.to/4awV2F1"
+                   target="_blank"
+                   rel="noopener noreferrer nofollow"
+                   class="amazon-btn">
+                    <span class="btn-left">
+                        <span class="btn-icon">🛒</span>
+                        <span>Check Price on Amazon</span>
+                    </span>
+                    <span class="btn-arrow">→</span>
                 </a>
-                
-                <p class="affiliate-note">✓ Prime eligible</p>
+
+                <p class="card-footer-note">Prime eligible</p>
+
             </div>
         </div>
 
+
+        <!--
+            ══════════════════════════════════════════════════════════
+            ➕ لإضافة منتج جديد، انسخ الكتلة التالية واملأها:
+            ══════════════════════════════════════════════════════════
+
+        <div class="product-card featured">
+            <div class="badges-row">
+                <span class="badge badge-green">💰 Best Value</span>
+            </div>
+            <div class="card-image-area">
+                <img src="YOUR-IMAGE.webp" alt="اسم المنتج" loading="lazy">
+            </div>
+            <div class="card-body">
+                <h2 class="card-title">اسم المنتج</h2>
+                <div class="card-specs">
+                    <span class="spec-tag">مواصفة 1</span>
+                    <span class="spec-tag">مواصفة 2</span>
+                </div>
+                <p class="card-desc">وصف المنتج هنا...</p>
+                <div class="card-divider"></div>
+                <a href="رابط-أمازون-هنا" target="_blank" rel="noopener noreferrer nofollow" class="amazon-btn">
+                    <span class="btn-left">
+                        <span class="btn-icon">🛒</span>
+                        <span>Check Price on Amazon</span>
+                    </span>
+                    <span class="btn-arrow">→</span>
+                </a>
+                <p class="card-footer-note">ملاحظة اختيارية</p>
+            </div>
+        </div>
+
+        -->
+
+
+    </div><!-- نهاية products-grid -->
+
+
+    <!-- ============================================================
+         ⚖️ إفصاح العمولة (مطلوب قانونياً)
+         ============================================================ -->
+    <div class="disclosure-bar">
+        <div class="disclosure-inner">
+            <p>
+                <strong>Affiliate Disclosure:</strong> As an Amazon Associate, we earn a small commission from qualifying purchases — at no extra cost to you. We only recommend gear we genuinely believe in. Prices and availability are subject to change.
+            </p>
+        </div>
     </div>
 
-    <!-- ===== قسم الإفصاح عن العمولة (مهم جداً قانونياً) ===== -->
-    <section class="disclosure">
-        <p>
-            <strong>Affiliate Disclosure:</strong> As an Amazon Associate, we earn from qualifying purchases. 
-            This means we may receive a small commission when you purchase through our links, at no extra cost to you. 
-            We only recommend products we believe will provide value to our readers. Prices and availability are subject to change.
-        </p>
-    </section>
 
-    <!-- ===== التذييل البسيط ===== -->
+    <!-- ============================================================
+         🦶 الفوتر
+         ============================================================ -->
     <footer>
+
+        <!-- لوغو الفوتر -->
+        <div class="footer-logo-area">
+            <!--
+                نفس اللوغو هنا لكن بحجم أصغر.
+                غيّر src="logo.png" ليطابق ملفك
+            -->
+            <img class="footer-logo-img" src="logo.png" alt="Gear Pulse"
+                 onerror="this.style.display='none'">
+            <span class="footer-logo-text">GEAR PULSE</span>
+        </div>
+
+        <p class="footer-desc">Curated gaming gear recommendations for serious players.</p>
+
         <div class="footer-bottom">
-            <p>© 2026 Pro Gaming Store. All rights reserved.</p>
+            <p class="footer-copy">© 2026 Gear Pulse. All rights reserved.</p>
+            <nav class="footer-links">
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Affiliate Disclosure</a>
+            </nav>
         </div>
-        <div class="footer-links">
-            <a href="#">About Us</a>
-            <a href="#">Contact</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Affiliate Disclosure</a>
-        </div>
+
     </footer>
 
-    <!-- ===== كود JavaScript بسيط جداً ===== -->
+
+    <!-- ============================================================
+         ⚙️ JavaScript: تأثيرات بسيطة
+         ============================================================ -->
     <script>
-        // ===== تتبع النقرات على روابط أمازون (اختياري) =====
-        // هذا الكود يسجل عدد النقرات على كل رابط - مفعل فقط إذا أضفت Google Analytics
-        document.querySelectorAll('.buy-button').forEach(button => {
-            button.addEventListener('click', function() {
-                // إذا كنت تستخدم Google Analytics، يمكنك تفعيل هذا السطر
-                // gtag('event', 'click', { 'event_category': 'Affiliate', 'event_label': this.querySelector('h2')?.textContent || 'Unknown' });
-                
-                console.log('User clicked affiliate link');
+        // ── فلاتر التصنيف ──────────────────────────────────────────
+        // عند الضغط على أي زر فلتر، يصبح نشطاً ويزيل النشاط عن الباقين
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                // هنا يمكنك لاحقاً إضافة كود لإظهار/إخفاء المنتجات حسب الفئة
             });
+        });
+
+        // ── تتبع النقرات على أزرار أمازون ──────────────────────────
+        // يطبع في الكونسول عند كل نقرة (للتطوير فقط)
+        // لتفعيل Google Analytics: أزل التعليق عن سطر gtag
+        document.querySelectorAll('.amazon-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const cardTitle = this.closest('.product-card')
+                                      .querySelector('.card-title')?.textContent || 'Unknown';
+
+                // gtag('event', 'click', { event_category: 'Affiliate', event_label: cardTitle });
+
+                console.log('Affiliate click:', cardTitle);
+            });
+        });
+
+        // ── ظهور البطاقات عند التمرير (Scroll Animation) ──────────
+        // البطاقات تظهر تدريجياً عند التمرير للأسفل
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    // تأخير صغير بين كل بطاقة وأخرى
+                    setTimeout(() => {
+                        entry.target.style.opacity  = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }, i * 80);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        // تطبيق الـ animation على كل البطاقات
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.style.opacity   = '0';
+            card.style.transform = 'translateY(24px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease, border-color 0.3s ease, background 0.3s ease';
+            observer.observe(card);
         });
     </script>
 
