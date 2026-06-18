@@ -136,16 +136,9 @@
             display: block;
         }
 
-        /* النص النصي للوغو - يظهر فقط إذا لم توجد صورة */
+        /* النص النصي للوغو - مخفي الآن لأن الصورة موجودة */
         .logo-text {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 20px;
-            font-weight: 900;
-            letter-spacing: 1px;
-            background: linear-gradient(120deg, var(--color-accent-blue), var(--color-accent-purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            display: none;
         }
 
         /* رقم إشعارات صغير (اختياري) */
@@ -665,10 +658,7 @@
         }
 
         .footer-logo-text {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 16px;
-            font-weight: 700;
-            color: var(--color-text-muted);
+            display: none;
         }
 
         .footer-desc {
@@ -779,11 +769,11 @@
                   احذف سطر <img class="logo-img"> بالكامل
                 ─────────────────────────────────────────────────────
             -->
-            <img class="logo-img" src="logo.png" alt="Gear Pulse Logo"
-                 onerror="this.style.display='none'">
-            <!-- ↑ onerror: يُخفي الصورة تلقائياً إذا لم يوجد الملف -->
-
-            <span class="logo-text">GEAR PULSE</span>
+            <!--
+                ✅ لوغوك هنا — الملف logo.png يجب أن يكون بجانب index.html
+                إذا أردت تغيير الحجم: غيّر height في CSS (.logo-img { height: 38px; })
+            -->
+            <img class="logo-img" src="logo.png" alt="Gear Pulse Logo">
 
         </a>
 
@@ -1021,8 +1011,7 @@
                 نفس اللوغو هنا لكن بحجم أصغر.
                 غيّر src="logo.png" ليطابق ملفك
             -->
-            <img class="footer-logo-img" src="logo.png" alt="Gear Pulse"
-                 onerror="this.style.display='none'">
+            <img class="footer-logo-img" src="logo.png" alt="Gear Pulse">
             <span class="footer-logo-text">GEAR PULSE</span>
         </div>
 
