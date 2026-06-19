@@ -589,3 +589,7 @@ h1, h2, h3, h4 {
     margin-top: 15px;
     display: none;
 }
+/* إخفاء الأسعار */
+.product-price {
+    display: none !important;
+}
