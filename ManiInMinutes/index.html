@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<!-- قمنا بتغيير لغة الصفحة إلى الإنجليزية (en) والاتجاه من اليسار لليمن (ltr) -->
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>متجر العناية بالأظافر | أفضل المنتجات العالمية</title>
+    <title>Nail Care Essentials | Best Global Products</title>
     
+    <!-- استدعاء خط "Poppins" من جوجل ليكون شكل الخط الإنجليزي احترافي وجذاب جداً -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
         /* -------------------------------------------------------------
@@ -18,7 +20,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Cairo', sans-serif; /* تطبيق الخط الاحترافي على كامل الصفحة */
+            font-family: 'Poppins', sans-serif; /* تطبيق الخط الإنجليزي الجديد */
         }
 
         :root {
@@ -26,7 +28,7 @@
             --secondary-color: #6C5B5B;  /* لون النصوص الثانوية */
             --dark-color: #2D2424;       /* لون النصوص الرئيسية والداكنة */
             --bg-light: #FFF5F5;         /* لون خلفية الصفحة: وردي خفيف جداً */
-            --white: #ffffff;            /* اللون الأبيض للخلفيات الكرتونية */
+            --white: #ffffff;            /* اللون الأبيض للخلفيات */
             --gold: #FFD700;             /* لون النجوم التقييمية */
         }
 
@@ -43,7 +45,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* ظل خفيف أسفل الهيدر */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -65,11 +67,21 @@
             font-size: 22px;
             font-weight: 700;
             color: var(--dark-color);
-            margin-right: 10px; /* مسافة بين الصورة والنص */
+            margin-left: 10px; /* مسافة بين الصورة والنص من اليسار لأن الموقع أصبح إنجليزي */
             text-decoration: none;
         }
 
-        /* تنسيق قسم الترحيب البانر (Hero Section) */
+        /* تنسيق نص إخلاء المسؤولية عن الأفلييت (Affiliate Disclosure) لتبدو احترافية وقانونية */
+        .disclosure-banner {
+            background-color: #fce8e6;
+            color: #a8645e;
+            font-size: 13px;
+            text-align: center;
+            padding: 8px 5%;
+            border-bottom: 1px solid rgba(232, 167, 161, 0.2);
+        }
+
+        /* تنسيق قسم الترحيب والبانر الرئيسي (Hero Section) */
         .hero {
             background: linear-gradient(135deg, #FFF5F5 0%, #FEDCD9 100%);
             padding: 60px 5%;
@@ -78,7 +90,7 @@
         }
 
         .hero h1 {
-            font-size: 32px;
+            font-size: 34px;
             color: var(--dark-color);
             margin-bottom: 15px;
             font-weight: 700;
@@ -94,7 +106,7 @@
         .hero-btn {
             background-color: var(--primary-color);
             color: var(--white);
-            padding: 10px 30px;
+            padding: 12px 35px;
             font-size: 18px;
             font-weight: 600;
             border: none;
@@ -103,26 +115,26 @@
             text-decoration: none;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(232, 167, 161, 0.4);
+            display: inline-block;
         }
 
         .hero-btn:hover {
-            background-color: #d6938d; /* درجة أغمق قليلاً عند تمرير الماوس */
-            transform: translateY(-2px); /* تأثير حركة خفيفة للأعلى */
+            background-color: #d6938d;
+            transform: translateY(-2px);
         }
 
-        /* تنسيق شبكة المنتجات (Products Grid) */
+        /* تنسيق شبكة المنتجات */
         .products-section {
             padding: 60px 5%;
         }
 
         .section-title {
             text-align: center;
-            font-size: 28px;
+            font-size: 30px;
             margin-bottom: 40px;
             position: relative;
         }
 
-        /* وضع خط ديكوري تحت عنوان القسم */
         .section-title::after {
             content: '';
             position: absolute;
@@ -137,11 +149,11 @@
 
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* ترتيب تلقائي للمنتجات حسب حجم الشاشة */
-            gap: 30px; /* المسافة بين كروت المنتجات */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
         }
 
-        /* تنسيق كرت المنتج الواحد */
+        /* تنسيق كرت المنتج */
         .product-card {
             background-color: var(--white);
             border-radius: 15px;
@@ -154,11 +166,10 @@
         }
 
         .product-card:hover {
-            transform: translateY(-5px); /* رفع الكرت قليلاً عند مرور الماوس لمنح حيوية */
+            transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(232, 167, 161, 0.2);
         }
 
-        /* تنسيق صورة المنتج */
         .product-img-container {
             width: 100%;
             height: 250px;
@@ -172,10 +183,9 @@
         .product-img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* جعل الصورة تغطي المساحة بشكل متناسق */
+            object-fit: cover;
         }
 
-        /* تفاصيل المنتج داخل الكرت */
         .product-info {
             padding: 20px;
             display: flex;
@@ -194,17 +204,16 @@
             font-size: 14px;
             color: var(--secondary-color);
             margin-bottom: 15px;
-            flex-grow: 1; /* لجعل الوصف يأخذ المساحة المتبقية وتتساوى الأزرار أسفل الكروت */
+            flex-grow: 1;
         }
 
-        /* تنسيق نجوم التقييم */
         .rating {
             margin-bottom: 15px;
             color: var(--gold);
             font-size: 16px;
         }
 
-        /* تنسيق زر الشراء بنظام الأفلييت */
+        /* تنسيق زر الشراء (ينقل للموقع الرسمي مباشرة) */
         .affiliate-btn {
             background-color: var(--dark-color);
             color: var(--white);
@@ -218,10 +227,10 @@
         }
 
         .affiliate-btn:hover {
-            background-color: var(--primary-color); /* يتغير لون الزر عند تمرير الماوس */
+            background-color: var(--primary-color);
         }
 
-        /* تنسيق الفوتر (تذييل الصفحة) */
+        /* تنسيق الفوتر أسفل الصفحة */
         footer {
             background-color: var(--dark-color);
             color: #f5f5f5;
@@ -238,82 +247,120 @@
 </head>
 <body>
 
+    <!-- -------------------------------------------------------------
+       قسم الهيدر وشريط التنقل العلوي - مكان وضع اللوجو واسم المتجر
+    ------------------------------------------------------------- -->
     <header>
         <div class="logo-container">
-            <img src="https://via.placeholder.com/50x50.png?text=Logo" alt="لوجو المتجر" class="logo-img">
+            <!-- ⬇️ [تعديل اللوجو] ⬇️ استبدل الرابط أدناه برابط صورتك الشخصية أو شعارك -->
+            <img src="https://via.placeholder.com/50x50.png?text=Logo" alt="Store Logo" class="logo-img">
             
-            <a href="#" class="logo-text">أظافري الجذابة</a>
+            <!-- يمكنك تغيير النص أدناه ليكون اسم متجرك بالإنجليزية -->
+            <a href="#" class="logo-text">GlamourNails</a>
         </div>
     </header>
 
+    <!-- -------------------------------------------------------------
+       قسم إخلاء المسؤولية (Affiliate Disclosure) - مهم جداً قانونياً لأمازون وغيره
+    ------------------------------------------------------------- -->
+    <div class="disclosure-banner">
+        <strong>Affiliate Disclosure:</strong> As an affiliate, we may earn a small commission from qualifying purchases made through our links, at no extra cost to you.
+    </div>
+
+    <!-- -------------------------------------------------------------
+       قسم الترحيب والبانر الرئيسي (Hero Section)
+    ------------------------------------------------------------- -->
     <section class="hero">
-        <h1>سر أظافر قوية، صحية ولامعة في مكان واحد</h1>
-        <p>نحن نختار لكِ بعناية أفضل منتجات العناية بالأظافر الحاصلة على أعلى التقييمات عالمياً لنوفر عليكِ عناء البحث.</p>
-        <a href="#products" class="hero-btn">تصفحي المنتجات الآن</a>
+        <h1>The Secret to Strong, Healthy & Radiant Nails</h1>
+        <p>We carefully select top-rated nail care products worldwide to save you time and effort. Find your perfect routine today!</p>
+        <a href="#products" class="hero-btn">Explore Products</a>
     </section>
 
+    <!-- -------------------------------------------------------------
+       قسم عرض المنتجات (Products Section)
+    ------------------------------------------------------------- -->
     <section class="products-section" id="products">
-        <h2 class="section-title">أفضل المنتجات الموصى بها</h2>
+        <h2 class="section-title">Our Top Recommended Products</h2>
         
         <div class="grid-container">
 
+            <!-- بداية المنتج الأول -->
             <div class="product-card">
                 <div class="product-img-container">
-                    <img src="https://via.placeholder.com/300x250.png?text=Nail+Serum" alt="سيروم تطويل الأظافر" class="product-img">
+                    <!-- ⬇️ [تعديل صورة المنتج 1] ⬇️ استبدل هذا الرابط برابط صورة المنتج الخاص بك -->
+                    <img src="https://via.placeholder.com/300x250.png?text=Nail+Serum" alt="Nail Serum" class="product-img">
                 </div>
                 <div class="product-info">
-                    <h3 class="product-title">سيروم مغذي ومقوي للأظافر السريع</h3>
-                    <p class="product-desc">يعمل هذا السيروم الغني بالفيتامينات على تقوية الأظافر الهشة ومنع تكسرها خلال 7 أيام فقط من الاستخدام المنتظم.</p>
+                    <h3 class="product-title">Premium Nail Growth & Strengthening Serum</h3>
+                    <p class="product-desc">Enriched with essential vitamins to deeply nourish, repair brittle nails, and prevent breakage within just 7 days of regular use.</p>
                     
+                    <!-- نظام تقييم النجوم (مفعل بالكامل) -->
                     <div class="rating">
                         ★★★★★ <span>(4.8)</span>
                     </div>
                     
-                    <a href="https://www.amazon.com" target="_blank" class="affiliate-btn">تسوقي المنتج من الموقع الرسمي</a>
+                    <!-- ⬇️ [تعديل رابط الأفلييت 1] ⬇️ ضع رابط الأفلييت الخاص بك هنا (أمازون مثلاً) -->
+                    <a href="https://www.amazon.com" target="_blank" class="affiliate-btn">Shop on Official Site</a>
                 </div>
             </div>
+            <!-- نهاية المنتج الأول -->
+
+            <!-- بداية المنتج الثاني -->
             <div class="product-card">
                 <div class="product-img-container">
-                    <img src="https://via.placeholder.com/300x250.png?text=Manicure+Kit" alt="مجموعة العناية الكاملة" class="product-img">
+                    <!-- ⬇️ [تعديل صورة المنتج 2] ⬇️ استبدل هذا الرابط برابط صورة المنتج الخاص بك -->
+                    <img src="https://via.placeholder.com/300x250.png?text=Manicure+Kit" alt="Manicure Kit" class="product-img">
                 </div>
                 <div class="product-info">
-                    <h3 class="product-title">مجموعة المانيكير والبديكير الاحترافية</h3>
-                    <p class="product-desc">حقيبة متكاملة تحتوي على جميع الأدوات المصنوعة من الفولاذ المقاوم للصدأ للعناية وتشكيل الأظافر بالمنزل كالمحترفين.</p>
+                    <h3 class="product-title">Professional Manicure & Pedicure Grooming Kit</h3>
+                    <p class="product-desc">An all-in-one professional set featuring high-quality stainless steel tools for salon-like nail care and shaping right at home.</p>
                     
                     <div class="rating">
                         ★★★★☆ <span>(4.5)</span>
                     </div>
                     
-                    <a href="https://www.amazon.com" target="_blank" class="affiliate-btn">تسوقي المنتج من الموقع الرسمي</a>
+                    <!-- ⬇️ [تعديل رابط الأفلييت 2] ⬇️ ضع رابط الأفلييت الخاص بك هنا -->
+                    <a href="https://www.amazon.com" target="_blank" class="affiliate-btn">Shop on Official Site</a>
                 </div>
             </div>
+            <!-- نهاية المنتج الثاني -->
+
+            <!-- بداية المنتج الثالث -->
             <div class="product-card">
                 <div class="product-img-container">
-                    <img src="https://via.placeholder.com/300x250.png?text=UV+Nail+Lamp" alt="جهاز تجفيف الأظافر" class="product-img">
+                    <!-- ⬇️ [تعديل صورة المنتج 3] ⬇️ استبدل هذا الرابط برابط صورة المنتج الخاص بك -->
+                    <img src="https://via.placeholder.com/300x250.png?text=UV+Nail+Lamp" alt="UV Nail Lamp" class="product-img">
                 </div>
                 <div class="product-info">
-                    <h3 class="product-title">جهاز تجفيف طلاء الأظافر الذكي UV/LED</h3>
-                    <p class="product-desc">جهاز تجفيف سريع ومثالي لجميع أنواع طلاء الأظافر والجيل، مزود بمستشعر تلقائي ذكي لحماية اليدين.</p>
+                    <h3 class="product-title">Smart UV/LED Nail Lamp Dryer with Sensor</h3>
+                    <p class="product-desc">A super fast-drying nail lamp perfect for all gel polishes, equipped with an automatic motion sensor to protect your skin.</p>
                     
                     <div class="rating">
                         ★★★★★ <span>(4.9)</span>
                     </div>
                     
-                    <a href="https://www.amazon.com" target="_blank" class="affiliate-btn">تسوقي المنتج من الموقع الرسمي</a>
+                    <!-- ⬇️ [تعديل رابط الأفلييت 3] ⬇️ ضع رابط الأفلييت الخاص بك هنا -->
+                    <a href="https://www.amazon.com" target="_blank" class="affiliate-btn">Shop on Official Site</a>
                 </div>
             </div>
-            </div>
+            <!-- نهاية المنتج الثالث -->
+
+        </div>
     </section>
 
+    <!-- -------------------------------------------------------------
+       قسم الفوتر (تذييل الصفحة) - حقوق الحفظ والملكية لمتجرك بالإنجليزي
+    ------------------------------------------------------------- -->
     <footer>
-        <p>جميع الحقوق محفوظة &copy; <span id="year"></span> لـ متجر أظافري الجذابة - تسويق بالعمولة</p>
+        <p>All Rights Reserved &copy; <span id="year"></span> | GlamourNails - Affiliate Marketing Site</p>
     </footer>
 
+    <!-- -------------------------------------------------------------
+       قسم الجافا سكريبت (JavaScript) - تحديث السنة تلقائياً
+    ------------------------------------------------------------- -->
     <script>
-        /* كود برمجى بسيط لتحديث السنة تلقائياً في أسفل الموقع كل عام */
+        /* كود لتحديث السنة تلقائياً في أسفل الموقع كل عام دون تدخل منك */
         document.getElementById('year').textContent = new Date().getFullYear();
-
-        /* تعليق دائم لك: إذا أردت مستقبلاً إضافة ميزات تفاعلية، يمكنك كتابتها هنا بكل سهولة */
     </script>
 </body>
 </html>
