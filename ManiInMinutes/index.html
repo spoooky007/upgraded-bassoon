@@ -148,24 +148,24 @@
         }
 
         .grid-container {
-    display: grid;
-    /* التعديل السحري هنا: يجبر الكروت على الاصطفاف بجانب بعضها ويحدد أقل عرض للكرت 280px */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important; 
-    gap: 25px; /* المسافة بين الكروت */
-    width: 100%;
-}
+            display: grid;
+            /* تم التعديل إلى auto-fill لمنع الكروت من التمدد بشكل مبالغ فيه */
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important; 
+            gap: 25px; /* المسافة بين الكروت */
+            width: 100%;
+        }
 
         /* تنسيق كرت المنتج */
         .product-card {
-    background-color: var(--white);
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column; /* ترتيب المحتويات عمودياً */
-    border: 1px solid rgba(232, 167, 161, 0.15);
-}
+            background-color: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column; /* ترتيب المحتويات عمودياً */
+            border: 1px solid rgba(232, 167, 161, 0.15);
+        }
 
         .product-card:hover {
             transform: translateY(-5px);
@@ -173,22 +173,23 @@
         }
 
         .product-img-container {
-    width: 100%;
-    height: 200px; /* يمكنك تقليل هذا الرقم إلى 200px إذا كنت تفضل الصور أقصر */
-    background-color: #fafafa;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    flex-shrink: 0; /* 👈 هذه الخاصية السحرية تمنع الصورة من التمدد الطولي نهائياً */
-}
+            width: 100%;
+            height: 200px;
+            background-color: #fafafa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            flex-shrink: 0;
+            padding: 10px;
+        }
 
         .product-img {
-    width: 100%;
-    height: 100%;
-    /* لضمان أن تغطي الصورة المساحة المخصصة لها دون أن تمط أو تشوه أبعادها الأصلية */
-    object-fit: cover; 
-}
+            width: 100%;
+            height: 100%;
+            /* تم التعديل إلى contain لكي تظهر الصورة كاملة غير مقطوعة */
+            object-fit: contain; 
+        }
 
         .product-info {
             padding: 20px;
@@ -296,7 +297,8 @@
                 </div>
                 <div class="product-info">
                     <h3 class="product-title">BTArtbox-Soft Gel</h3>
-                    <p class="BTArtbox Square Ombre Press On Nails -Soft Gel Press On Nails Short with Nail Glue, 16 Sizes - 32 Reusable Fake Nails Kit, Vanilla Cream.</p>
+                    <!-- تم إصلاح الخطأ البرمجي في السطر التالي الذي كان يكسر الصفحة -->
+                    <p class="product-desc">BTArtbox Square Ombre Press On Nails -Soft Gel Press On Nails Short with Nail Glue, 16 Sizes - 32 Reusable Fake Nails Kit, Vanilla Cream.</p>
                     
                     <!-- نظام تقييم النجوم (مفعل بالكامل) -->
                     <div class="rating">
