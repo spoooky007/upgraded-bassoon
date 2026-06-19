@@ -182,10 +182,11 @@
 }
 
         .product-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+    width: 100%;
+    height: 100%;
+    /* لضمان أن تغطي الصورة المساحة المخصصة لها دون أن تمط أو تشوه أبعادها الأصلية */
+    object-fit: cover; 
+}
 
         .product-info {
             padding: 20px;
