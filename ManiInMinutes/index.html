@@ -171,14 +171,15 @@
         }
 
         .product-img-container {
-            width: 100%;
-            height: 250px;
-            background-color: #fafafa;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-        }
+    width: 100%;
+    height: 250px; /* يمكنك تقليل هذا الرقم إلى 200px إذا كنت تفضل الصور أقصر */
+    background-color: #fafafa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex-shrink: 0; /* 👈 هذه الخاصية السحرية تمنع الصورة من التمدد الطولي نهائياً */
+}
 
         .product-img {
             width: 100%;
