@@ -148,10 +148,12 @@
         }
 
         .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
+    display: grid;
+    /* التعديل السحري هنا: يجبر الكروت على الاصطفاف بجانب بعضها ويحدد أقل عرض للكرت 280px */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important; 
+    gap: 25px; /* المسافة بين الكروت */
+    width: 100%;
+}
 
         /* تنسيق كرت المنتج */
         .product-card {
